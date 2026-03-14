@@ -28,9 +28,12 @@ export function Footer() {
             <h3 className="text-lg font-display font-semibold mb-6 text-white">Quick Links</h3>
             <ul className="space-y-3 text-slate-300 text-sm">
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/about/meettheteam" className="hover:text-primary transition-colors">Meet the Team</Link></li>
+              <li><Link href="/about/officetour" className="hover:text-primary transition-colors">Office Tour</Link></li>
+              <li><Link href="/about/reviews" className="hover:text-primary transition-colors">Patient Reviews</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
-              <li><Link href="/specials" className="hover:text-primary transition-colors">Special Offers</Link></li>
+              <li><Link href="/specials/savingsplan" className="hover:text-primary transition-colors">Smile Club / Specials</Link></li>
+              <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
             </ul>
           </div>
