@@ -21,7 +21,8 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
-│   └── api-server/         # Express API server
+│   ├── api-server/         # Express API server
+│   └── heritage-oak-dental/ # Heritage Oak Dental website (React + Vite)
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
 │   ├── api-client-react/   # Generated React Query hooks
@@ -34,6 +35,32 @@ artifacts-monorepo/
 ├── tsconfig.json           # Root TS project references
 └── package.json            # Root package with hoisted devDeps
 ```
+
+## Heritage Oak Dental Website
+
+A complete replica of the Heritage Oak Dental website (https://sable-board-83352808.figma.site/) built as a static React + Vite app.
+
+### Features
+- Complete navigation with dropdown menus (About, Services, Resources)
+- Home page with hero, services grid, YouTube video tour, meet the dentists, hours, and location
+- Services page with all 9 service categories with real practice photos
+- Individual service detail pages
+- About page with team profiles (Dr. Shane Douglas, Dr. Ben Kloss)
+- Contact/Schedule Appointment page with form and Google Maps
+- Specials page with new patient offers
+- Resource pages (Financial, Forms, Education, Videos)
+- Complete footer with hours, contact info, and quick links
+- Brand colors: #1B89C5 (primary blue), #101828 (dark navy)
+
+### Images
+All images are stored in `artifacts/heritage-oak-dental/public/images/` and sourced from the original Figma site.
+
+### Tech Stack (frontend only, no backend needed)
+- React + Vite
+- Wouter for routing
+- Tailwind CSS
+- Lucide React icons
+- React Hook Form + Zod for contact form validation
 
 ## TypeScript & Composite Projects
 
@@ -49,6 +76,18 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
 ## Packages
+
+### `artifacts/heritage-oak-dental` (`@workspace/heritage-oak-dental`)
+
+Heritage Oak Dental website. Frontend-only static site, no backend API needed.
+
+- Entry: `src/main.tsx`
+- App: `src/App.tsx` — routes via wouter
+- Pages: `src/pages/` — Home, About, Services, ServiceDetail, Contact, Specials, ResourceDetail
+- Components: `src/components/layout/` — Navbar, Footer, Layout
+- Data: `src/lib/data.ts` — static content for services, team, resources
+- Images: `public/images/` — practice photos, logo, doctor headshots
+- `pnpm --filter @workspace/heritage-oak-dental run dev` — run the dev server
 
 ### `artifacts/api-server` (`@workspace/api-server`)
 
@@ -66,31 +105,20 @@ Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` 
 
 Database layer using Drizzle ORM with PostgreSQL. Exports a Drizzle client instance and schema models.
 
-- `src/index.ts` — creates a `Pool` + Drizzle instance, exports schema
-- `src/schema/index.ts` — barrel re-export of all models
-- `src/schema/<modelname>.ts` — table definitions with `drizzle-zod` insert schemas (no models definitions exist right now)
-- `drizzle.config.ts` — Drizzle Kit config (requires `DATABASE_URL`, automatically provided by Replit)
-- Exports: `.` (pool, db, schema), `./schema` (schema only)
-
-Production migrations are handled by Replit when publishing. In development, we just use `pnpm --filter @workspace/db run push`, and we fallback to `pnpm --filter @workspace/db run push-force`.
-
 ### `lib/api-spec` (`@workspace/api-spec`)
 
-Owns the OpenAPI 3.1 spec (`openapi.yaml`) and the Orval config (`orval.config.ts`). Running codegen produces output into two sibling packages:
-
-1. `lib/api-client-react/src/generated/` — React Query hooks + fetch client
-2. `lib/api-zod/src/generated/` — Zod schemas
+Owns the OpenAPI 3.1 spec (`openapi.yaml`) and the Orval config (`orval.config.ts`).
 
 Run codegen: `pnpm --filter @workspace/api-spec run codegen`
 
 ### `lib/api-zod` (`@workspace/api-zod`)
 
-Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used by `api-server` for response validation.
+Generated Zod schemas from the OpenAPI spec.
 
 ### `lib/api-client-react` (`@workspace/api-client-react`)
 
-Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
+Generated React Query hooks and fetch client from the OpenAPI spec.
 
 ### `scripts` (`@workspace/scripts`)
 
-Utility scripts package. Each script is a `.ts` file in `src/` with a corresponding npm script in `package.json`. Run scripts via `pnpm --filter @workspace/scripts run <script>`. Scripts can import any workspace package (e.g., `@workspace/db`) by adding it as a dependency in `scripts/package.json`.
+Utility scripts package.

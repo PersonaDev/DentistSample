@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Heritage Oak Dental"
+version = "1.0.0"
+id = "artifacts/heritage-oak-dental"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+localPort = 25652
+name = "web"
+paths = ["/"]
+
+[services.development]
+run = "pnpm --filter @workspace/heritage-oak-dental run dev"
+
+[services.env]
+PORT = "25652"
+BASE_PATH = "/"
+
+[services.production]
+build = ["pnpm", "--filter", "@workspace/heritage-oak-dental", "run", "build"]
+publicDir = "artifacts/heritage-oak-dental/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"

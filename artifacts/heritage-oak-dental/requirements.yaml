@@ -1,0 +1,14 @@
+packages:
+  "framer-motion": "For premium page transitions, scroll animations, and micro-interactions"
+  "lucide-react": "For UI icons like menu, close, phone, mail, map-pin, chevron-down"
+  "clsx": "For conditional class names"
+  "tailwind-merge": "For merging tailwind classes safely"
+  "react-hook-form": "For robust contact form handling"
+  "@hookform/resolvers": "For zod validation integration"
+
+images: []
+
+notes:
+  - Static marketing site, no backend API required for core rendering.
+  - All content is hardcoded as per instructions.
+  - Contact form submissions are simulated on the frontend.
