@@ -67,29 +67,43 @@ const sourceColor: Record<string, string> = {
   Facebook: "text-blue-700",
 };
 
+function Stars() {
+  return (
+    <div className="flex gap-1 justify-center">
+      {[1,2,3,4,5].map(s => (
+        <svg key={s} className="w-8 h-8 text-[#1B89C5]" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 export function Reviews() {
   return (
     <div>
+      {/* Hero */}
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-5xl font-bold text-[#101828] mb-3">Reviews</h1>
-        <p className="text-xl text-gray-600">Read our 5 star reviews</p>
+        <h1 className="text-5xl font-bold text-[#101828] mb-4">Reviews</h1>
+        <Stars />
+        <p className="text-lg text-gray-600 mt-3">Read our 5 star reviews</p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {REVIEWS.map((r, i) => (
-            <div key={i} className="bg-white border border-gray-100 rounded-2xl p-8 shadow-sm flex flex-col gap-4">
-              <div className="flex gap-1">
+            <div key={i} className="border border-gray-200 rounded-xl p-6 flex flex-col gap-3">
+              <div className="flex gap-0.5">
                 {[1,2,3,4,5].map(s => (
-                  <svg key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={s} className="w-4 h-4 text-[#1B89C5]" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-700 leading-relaxed flex-1">"{r.text}"</p>
+              <p className="text-gray-700 text-sm leading-relaxed italic flex-1">"{r.text}"</p>
               <div className="flex items-center justify-between mt-2">
-                <span className="font-semibold text-[#101828]">– {r.author}</span>
-                <span className={`text-sm font-bold ${sourceColor[r.source] || "text-gray-500"}`}>{r.source}</span>
+                <span className="font-semibold text-[#101828] text-sm">– {r.author}</span>
+                <span className={`text-xs font-bold ${sourceColor[r.source] || "text-gray-500"}`}>{r.source}</span>
               </div>
             </div>
           ))}

@@ -1,57 +1,77 @@
 import { Link } from "wouter";
 
+const BENEFITS = [
+  { label: "2 Exams", full: false },
+  { label: "1 Emergency Exam", full: false },
+  { label: "2 Cleanings or 2 Periodontal Maintenance", full: false },
+  { label: "2 Fluoride Treatments", full: false },
+  { label: "2 Oral Cancer Screenings", full: false },
+  { label: "2 Periodontal Screenings", full: false },
+  { label: "All X-rays as Needed", full: false },
+  { label: "15% Courtesy on all Other Services", full: false },
+  { label: "15% Off Additional Cleanings or Periodontal Maintenance", full: true },
+  { label: "No maximums, No deductible, and No insurance gimmicks", full: true },
+];
+
 export function SavingsPlan() {
+  const half = BENEFITS.filter(b => !b.full);
+  const full = BENEFITS.filter(b => b.full);
+
   return (
     <div>
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-5xl font-bold text-[#101828] mb-4">Heritage Oak Dental Smile Club</h1>
-        <p className="text-xl text-gray-600">A flexible alternative to dental insurance — no hassles, just care</p>
+        <h1 className="text-5xl font-bold text-[#101828] mb-4">Heritage Oak Dental Savings Plan</h1>
+        <p className="text-xl text-gray-600">A simple, affordable alternative to dental insurance</p>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
-        <div className="text-center mb-14">
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            The Heritage Dental Plan is a flexible alternative to insurance. Enroll today and enjoy all the benefits of great dental care without the headaches of traditional insurance.
-          </p>
-        </div>
+        <div className="bg-[#E8F4FA] rounded-2xl p-10 mb-8">
+          <h2 className="text-3xl font-bold text-[#101828] text-center mb-8">Benefits</h2>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-14">
-          {[
-            { title: "No Claim Forms", icon: "📋" },
-            { title: "No Deductibles", icon: "💰" },
-            { title: "No Annual Maximums", icon: "📊" },
-            { title: "No Waiting Period", icon: "⏱️" },
-            { title: "No Limitations", icon: "🚫" },
-            { title: "Specialty Discounts", icon: "✂️" },
-          ].map((b) => (
-            <div key={b.title} className="bg-[#E8F4FA] rounded-2xl p-8 text-center">
-              <div className="text-4xl mb-3">{b.icon}</div>
-              <h3 className="text-lg font-bold text-[#101828]">{b.title}</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
+            {half.map((b) => (
+              <div key={b.label} className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-3.5">
+                <svg className="w-4 h-4 text-[#1B89C5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[#101828] text-sm font-medium">{b.label}</span>
+              </div>
+            ))}
+          </div>
+
+          {full.map((b) => (
+            <div key={b.label} className="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-5 py-3.5 mb-3">
+              <svg className="w-4 h-4 text-[#1B89C5] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              <span className="text-[#101828] text-sm font-medium">{b.label}</span>
             </div>
           ))}
+
+          <p className="text-center text-gray-500 text-sm mt-4 italic">
+            (15% courtesy cannot be combined with Care Credit)
+          </p>
         </div>
 
         {/* CTA */}
-        <div className="bg-[#1B89C5] rounded-2xl p-12 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Ready to Enroll?</h2>
-          <p className="text-blue-100 text-lg mb-6">
-            To learn more about our Smile Club savings plan, please call our office. We'll be happy to explain all the benefits and get you enrolled today!
-          </p>
-          <a
-            href="tel:9166264050"
-            className="inline-block bg-white text-[#1B89C5] font-bold px-10 py-4 rounded-full hover:bg-blue-50 transition-colors text-lg"
-          >
-            Call (916) 626-4050
-          </a>
-        </div>
-
-        <div className="mt-10 text-center">
-          <p className="text-gray-600 mb-4">Also explore our other financial options:</p>
-          <Link href="/resources/finance" className="text-[#1B89C5] hover:underline font-semibold">
-            View All Payment & Insurance Options →
-          </Link>
+        <div className="bg-[#1B89C5] rounded-2xl p-10 text-center text-white">
+          <h2 className="text-3xl font-bold mb-3">Interested?</h2>
+          <p className="text-blue-100 mb-6">Give our office a call or click below to sign up.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a
+              href="tel:9166264050"
+              className="inline-block bg-white text-[#1B89C5] font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors"
+            >
+              Call Now! (916) 626-4050
+            </a>
+            <Link
+              href="/contact"
+              className="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-colors"
+            >
+              Appointment Request Form
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -1,104 +1,142 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
+const SERVICES_LIST = [
+  { label: "General Dentistry", href: "/services/general" },
+  { label: "Cosmetic Dentistry", href: "/services/cosmetic" },
+  { label: "Dental Implants", href: "/services/implant" },
+  { label: "Orthodontics", href: "/services/orthodontics" },
+  { label: "Pediatric Dentistry", href: "/services/pediatric" },
+  { label: "Oral Surgery", href: "/services/oral-surgery" },
+  { label: "Sedation Dentistry", href: "/services/sedation" },
+  { label: "Periodontics", href: "/services/periodontics" },
+];
+
+const QUICK_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About Our Dentists", href: "/about/meettheteam" },
+  { label: "Dental Services", href: "/services" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Patient Resources", href: "/resources/newpatient" },
+  { label: "Savings Plan", href: "/specials/savingsplan" },
+];
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#101828] text-white pt-20 pb-10 border-t-4 border-primary">
+    <footer className="bg-[#101828] text-white pt-16 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
           {/* Brand Col */}
-          <div className="space-y-6">
-            <div className="bg-white p-4 rounded-2xl inline-block">
-              <img 
-                src={`${import.meta.env.BASE_URL}images/logo.png`} 
-                alt="Heritage Oak Dental Logo" 
-                className="h-10 w-auto"
+          <div>
+            <div className="mb-5">
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo.png`}
+                alt="Heritage Oak Dental"
+                className="h-12 w-auto brightness-0 invert"
               />
             </div>
-            <p className="text-slate-300 leading-relaxed text-sm">
-              Your trusted partner for exceptional dental care in Rocklin, CA. We combine advanced technology with compassionate care to deliver smiles you'll love.
+            <p className="text-slate-400 text-sm leading-relaxed mb-5">
+              Your trusted family dentist in Rocklin, CA providing comprehensive dental care for patients of all ages.
             </p>
+            <ul className="space-y-2 text-slate-400 text-sm">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                <span>3700 Atherton Rd<br />Rocklin, CA 95765</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-slate-400 shrink-0" />
+                <a href="tel:9166264050" className="hover:text-white transition-colors">(916) 626-4050</a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-slate-400 shrink-0" />
+                <a href="mailto:contactus@heritageoakdental.com" className="hover:text-white transition-colors text-xs">contactus@heritageoakdental.com</a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Clock className="w-4 h-4 text-slate-400 shrink-0 mt-0.5" />
+                <span>Mon–Thu: 7:30AM–6PM<br />Fri: 8AM–4PM*</span>
+              </li>
+            </ul>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-display font-semibold mb-6 text-white">Quick Links</h3>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/about/meettheteam" className="hover:text-primary transition-colors">Meet the Team</Link></li>
-              <li><Link href="/about/officetour" className="hover:text-primary transition-colors">Office Tour</Link></li>
-              <li><Link href="/about/reviews" className="hover:text-primary transition-colors">Patient Reviews</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">Our Services</Link></li>
-              <li><Link href="/specials/savingsplan" className="hover:text-primary transition-colors">Smile Club / Specials</Link></li>
-              <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
+            <h3 className="text-white font-semibold mb-5">Quick Links</h3>
+            <ul className="space-y-2.5">
+              {QUICK_LINKS.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="text-slate-400 text-sm hover:text-white transition-colors">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Our Services */}
           <div>
-            <h3 className="text-lg font-display font-semibold mb-6 text-white">Contact Us</h3>
-            <ul className="space-y-4 text-slate-300 text-sm">
-              <li>
-                <a href="tel:9166264050" className="flex items-start gap-3 hover:text-primary transition-colors">
-                  <Phone className="w-5 h-5 text-primary shrink-0" />
-                  <span>(916) 626-4050</span>
-                </a>
-              </li>
-              <li>
-                <a href="mailto:contactus@heritageoakdental.com" className="flex items-start gap-3 hover:text-primary transition-colors">
-                  <Mail className="w-5 h-5 text-primary shrink-0" />
-                  <span className="break-all">contactus@heritageoakdental.com</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://maps.google.com/?q=3700+Atherton+Rd,+Rocklin,+CA+95765" target="_blank" rel="noreferrer" className="flex items-start gap-3 hover:text-primary transition-colors">
-                  <MapPin className="w-5 h-5 text-primary shrink-0" />
-                  <span>3700 Atherton Rd<br/>Rocklin, CA 95765</span>
-                </a>
-              </li>
+            <h3 className="text-white font-semibold mb-5">Our Services</h3>
+            <ul className="space-y-2.5">
+              {SERVICES_LIST.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="text-slate-400 text-sm hover:text-white transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Hours */}
+          {/* Connect + Serving */}
           <div>
-            <h3 className="text-lg font-display font-semibold mb-6 text-white">Office Hours</h3>
-            <ul className="space-y-3 text-slate-300 text-sm">
-              <li className="flex justify-between items-center border-b border-slate-700/50 pb-2">
-                <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary"/> Monday</span>
-                <span>7:30AM – 6:00PM</span>
-              </li>
-              <li className="flex justify-between items-center border-b border-slate-700/50 pb-2">
-                <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary"/> Tuesday</span>
-                <span>7:30AM – 6:00PM</span>
-              </li>
-              <li className="flex justify-between items-center border-b border-slate-700/50 pb-2">
-                <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary"/> Wednesday</span>
-                <span>7:30AM – 6:00PM</span>
-              </li>
-              <li className="flex justify-between items-center border-b border-slate-700/50 pb-2">
-                <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary"/> Thursday</span>
-                <span>7:30AM – 6:00PM</span>
-              </li>
-              <li className="flex justify-between items-center text-slate-400">
-                <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary"/> Friday</span>
-                <span>8:00AM – 4:00PM*</span>
-              </li>
-            </ul>
-            <p className="text-xs text-slate-500 mt-3">*Administrative hours only</p>
+            <h3 className="text-white font-semibold mb-5">Connect With Us</h3>
+            <div className="flex gap-3 mb-8">
+              {/* Facebook */}
+              <a href="https://www.facebook.com/heritageoakdental" target="_blank" rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center hover:bg-[#1B89C5] transition-colors">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              {/* Instagram */}
+              <a href="https://www.instagram.com/heritageoakdental" target="_blank" rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center hover:bg-[#1B89C5] transition-colors">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                </svg>
+              </a>
+              {/* Twitter/X */}
+              <a href="https://twitter.com/heritageoakdental" target="_blank" rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center hover:bg-[#1B89C5] transition-colors">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+              {/* YouTube */}
+              <a href="https://www.youtube.com/@heritageoakdental" target="_blank" rel="noreferrer"
+                className="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center hover:bg-[#1B89C5] transition-colors">
+                <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+            </div>
+
+            <h3 className="text-white font-semibold mb-3">Serving</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">
+              Rocklin • Roseville • Granite Bay • Lincoln • Loomis • Auburn • Citrus Heights
+            </p>
           </div>
 
         </div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-800 pt-6 text-center text-slate-500 text-sm space-y-1">
           <p>© {currentYear} Heritage Oak Dental. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/resources/forms" className="hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="/resources/forms" className="hover:text-primary transition-colors">Terms of Service</Link>
-          </div>
+          <p>Heritage Oak Dental • 3700 Atherton Rd, Rocklin, CA 95765 • (916) 626-4050</p>
+          <p>Web presence created by <span className="text-[#1B89C5]">GreyWhale</span></p>
         </div>
       </div>
     </footer>
