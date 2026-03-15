@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { SERVICES } from "@/lib/data";
 
 const ABOUT_LINKS = [
+  { label: "Meet the Doctors", href: "/about/doctors" },
   { label: "Meet the Team", href: "/about/meettheteam" },
   { label: "Office Tour", href: "/about/officetour" },
   { label: "Patient Reviews", href: "/about/reviews" },

@@ -6,6 +6,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Home } from "@/pages/Home";
 import { About } from "@/pages/About";
 import { MeetTheTeam } from "@/pages/MeetTheTeam";
+import { MeetTheDoctors } from "@/pages/MeetTheDoctors";
 import { OfficeTour } from "@/pages/OfficeTour";
 import { Reviews } from "@/pages/Reviews";
 import { Careers } from "@/pages/Careers";
@@ -30,6 +31,7 @@ function Router() {
 
         {/* About */}
         <Route path="/about" component={About} />
+        <Route path="/about/doctors" component={MeetTheDoctors} />
         <Route path="/about/meettheteam" component={MeetTheTeam} />
         <Route path="/about/officetour" component={OfficeTour} />
         <Route path="/about/reviews" component={Reviews} />

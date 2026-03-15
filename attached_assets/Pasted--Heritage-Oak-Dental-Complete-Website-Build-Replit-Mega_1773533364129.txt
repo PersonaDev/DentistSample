@@ -1,0 +1,505 @@
+# Heritage Oak Dental — Complete Website Build — Replit Mega Prompt
+
+Build a complete, modern, multi-page dentist website for Heritage Oak Dental. Light blue (#1B89C5) and white theme. Clean, professional, welcoming. React with React Router. Fully responsive. SEO optimized for "dentist in Rocklin CA" and surrounding areas.
+
+---
+
+## GLOBAL DESIGN
+
+- Primary color: #1B89C5 (Heritage Oak blue)
+- White backgrounds, light blue accents
+- Clean sans-serif typography
+- Soft gradients, rounded corners
+- Mobile-first responsive design
+- Smooth scroll navigation
+- Footer on every page with: address (3700 Atherton Rd, Rocklin CA 95765), phone ((916) 626-4050), email (contactus@heritageoakdental.com), hours, and service area cities (Rocklin, Roseville, Granite Bay, Lincoln, Loomis, Auburn, Citrus Heights)
+- Header on every page with logo, phone number, and navigation
+
+---
+
+## NAVIGATION STRUCTURE
+
+Main nav with dropdowns:
+
+**Home** → /
+
+**About** (dropdown):
+- Meet the Doctors → /about/doctors
+- Meet the Team → /about/team
+- Office Tour → /about/officetour
+- Reviews → /about/reviews
+- Contact → /about/contact
+- Careers → /about/careers
+
+**Resources** (dropdown):
+- New Patient Forms → /resources/newpatient
+- Finance → /resources/finance
+- Careers → /resources/careers
+- Pre-Treatment Instructions → /resources/pretreatment
+- Post-Treatment Instructions → /resources/posttreatment
+
+**Specials** (dropdown):
+- Savings Plan → /specials/savingsplan
+
+**Services** (dropdown):
+- Cosmetic Dentistry → /services/cosmetic
+- General Dentistry → /services/general
+- Implant Dentistry → /services/implant
+- Oral & Maxillofacial Surgery → /services/oral
+- Orthodontics → /services/orthodontics
+- Pediatric Dentistry → /services/pediatric
+- Periodontics → /services/periodontics
+- Restorative Dentistry → /services/restorative
+- Sedation Dentistry → /services/sedation
+
+---
+
+## PAGE 1: HOME (/)
+
+Hero section with headline and call-to-action buttons ("Call Us" and "Book Appointment").
+
+**Heritage Oak Dental Savings Plan** banner with "Learn More" link to /specials/savingsplan.
+
+**Services section** with intro text:
+"At our office, we utilize the latest technological advances in the industry, such as intraoral cameras, digital x-rays, oral sedation, dental lasers, CAD CAM, implants, white fillings, 3D imaging, invisible ceramic braces, clear braces, and Invisalign to ensure that you receive the most effective and efficient care possible. Whatever your dental needs we are ready to provide you with exceptional care. Below are some of the procedures and services we regularly provide to our patients with excellent results. Your smile is our priority so please use this information to become informed about your oral health and dental treatment."
+
+Grid of 9 service cards linking to each service page:
+- Cosmetic Dentistry
+- General Dentistry
+- Implant Dentistry
+- Oral & Maxillofacial Surgery
+- Orthodontics
+- Pediatric Dentistry
+- Periodontics
+- Restorative Dentistry
+- Sedation Dentistry
+
+**Meet the Doctors** section with Dr. Shane Douglas, D.D.S. and Dr. Ben Kloss, D.M.D. with "Learn More" link.
+
+**Hours section:**
+- Monday 7:30AM – 6:00PM
+- Tuesday 7:30AM – 6:00PM
+- Wednesday 7:30AM – 6:00PM
+- Thursday 7:30AM – 6:00PM
+- Friday 8:00AM – 4:00PM* (*Administrative hours only.)
+
+---
+
+## PAGE 2: MEET THE DOCTORS (/about/doctors)
+
+### Dr. Shane Douglas, D.D.S.
+
+Circular profile photo. Quote: "As my patient, you can expect thorough, lasting, and honest dental care. I will help address your needs and wants while improving your oral health. I want to exceed your expectations as your dentist, friend, and neighbor!"
+
+Personal: Dr. Douglas enjoys kiteboarding, wakeboarding and spending time with his wife, Kristen, and their four children, Noah, Camden, Everly, and Ashlyn.
+
+**Collapsible/accordion sections:**
+
+EDUCATION:
+- DDS – University of California, San Francisco, CA
+- BA, Physics – Point Loma Nazarene University, San Diego, CA
+
+ADVANCED TRAINING:
+- IV Sedation
+- Orthodontics with Braces & Clear Aligners
+- Oral Surgery
+- Tissue Grafting
+- Dental Implants
+
+PROFESSIONAL ASSOCIATIONS:
+- American Dental Association
+- California Dental Association
+- Sacramento District Dental Society
+- Academy of General Dentistry
+- American Academy of Implant Dentistry
+- American Academy of Cosmetic Dentistry
+- American Orthodontic Society
+
+PUBLICATIONS & RESEARCH:
+- SPIE Digital Library: "Imaging Natural Occlusal Caries Lesions with Optical Coherence Tomography"
+- Lasers in Surgery and Medicine: "Non-Destructive Clinical Assessment of Occlusal Caries Lesions using Near-IR Imaging Methods"
+- Cone Beam Computed Tomography: "CBCT Analysis of Upper Cervical Vertebrae Anomalies in Individuals with Craniofacial Anomalies and in Controls"
+
+### Dr. Ben Kloss, D.M.D.
+
+Circular profile photo. Quote: "As my patient, you can expect to feel safe and comfortable while receiving the best that modern dentistry provides. I am committed to providing quality, evidence-based dentistry, which is why I am dedicated to taking excellent continuing education to stay relevant in the latest dental techniques. I love what I do! I look forward to partnering with you and your oral health."
+
+**Collapsible/accordion sections:**
+
+EDUCATION:
+- DMD – Midwestern University College of Dental Medicine, AZ
+- BA, Biological Sciences – California State University Sacramento
+
+PROFESSIONAL ASSOCIATIONS:
+- American Dental Association
+- California Dental Association
+- Sacramento Dental Association
+- Academy of General Dentistry
+- American Academy of Cosmetic Dentistry
+- American Academy of Laser Dentistry
+- SPEAR Education
+
+---
+
+## PAGE 3: MEET THE TEAM (/about/team)
+
+4 team member cards in a 2-column grid. Each has a circular profile photo, name, title, and bio.
+
+**Marion – Office Manager**
+Marion began her dental career over 30 years ago as a Registered Dental Assistant and later moved to the administrative side of dentistry. Marion is committed to making our patient experience in our office a positive one. Her goal is to incorporate her wealth of knowledge and customer service acquired over the years, to equip the team to best serve our patients. In her free time Marion enjoys photography and spending time with family and friends.
+
+**Blair – Treatment Coordinator/Patient Advocate**
+Blair loves to help patients remove barriers to treatment. In her free time, she enjoys going to concerts, hiking and spending time with her husband Boyd and their dog Birdee.
+
+**Lindsay – Registered Dental Hygienist**
+Lindsay has been working in the dental field for 15 years. She is committed to building relationships with her patients and partnering in their dental hygiene needs. When not caring for her patients' smiles, Lindsay enjoys spending time with friends and family, her husband Nate and children Brynn and Lucas.
+
+**Samira – Registered Dental Hygienist**
+Samira has been a dental hygienist for 7 years. She is passionate about educating her patients on how to achieve a healthy and happy smile and loves to make her patients laugh. In her spare time, she enjoys spending time outdoors.
+
+---
+
+## PAGE 4: OFFICE TOUR (/about/officetour)
+
+Image gallery organized into sections:
+- Welcoming Waiting Area (3 images)
+- Kids Play Area (3 images)
+- Modern Facilities (2 images)
+
+Use placeholder images or stock dental office images. Clean grid layout with captions.
+
+---
+
+## PAGE 5: REVIEWS (/about/reviews)
+
+Display patient testimonials in a clean card layout. Include these two plus space for more:
+
+"I've posted before, but I can't help but post again. I've been a 'dentist hopper' for decades & I found the best at Heritage Oak Dental. Annette is a hygienist sent from the heavens above – gentle, compassionate and really good at what she does. My teeth and gums are in the best condition they've ever been – thanks to Annette and Dr. Shane!" – TERESA E., GOOGLE
+
+"Hands down the best dental experience. The office is beautiful and immaculate. I was so nervous (for something that wasn't wrong anyhow) and Dr. Kloss and his staff were beyond personable and down to earth. My kind of people. I highly recommend this office." – TARYN D., YELP
+
+---
+
+## PAGE 6: CONTACT (/about/contact)
+
+Welcome text: "Welcome to Heritage Oak Dental! Please give our office a call if you have any questions or concerns. We hope to see you for your next dental visit!"
+
+**Address:** 3700 Atherton Rd, Rocklin, CA 95765
+**Phone:** (916) 626-4050 (call and text)
+**Email:** contactus@heritageoakdental.com
+**Website:** www.heritageoakdental.com
+
+**Hours:**
+- Monday 7:30AM - 6:00PM
+- Tuesday 7:30AM - 6:00PM
+- Wednesday 7:30AM - 6:00PM
+- Thursday 7:30AM - 6:00PM
+- Friday 8:00AM - 4:00PM* (*Administrative hours only.)
+
+Embedded Google Maps iframe for 3700 Atherton Rd, Rocklin CA 95765.
+
+Contact form: "Questions? Send Us A Message!" with fields for name, email, phone, and message.
+
+---
+
+## PAGE 7: CAREERS (/about/careers)
+
+"Be part of our amazing dental team here at Heritage Oak Dental. We are currently looking for candidates for the following positions:"
+
+Open positions:
+- Dental Assistants (DA)
+- Registered Dental Assistants (RDA)
+- Receptionist
+
+"We are looking for technologically savvy, caring, honest, and hard working team members."
+
+"Please email your resume to: ContactUs@HeritageOakDental.com"
+
+---
+
+## PAGE 8: NEW PATIENT FORMS (/resources/newpatient)
+
+5 downloadable PDF form cards with icons, descriptions, and download links:
+
+1. **Adult Health History** — https://www.heritageoakdental.com/wp-content/uploads/2019/04/Adult-Medical-Dental-History.pdf
+2. **Child Health History** — https://www.heritageoakdental.com/wp-content/uploads/2019/04/Child-Medical-Dental-History.pdf
+3. **HIPAA** — https://www.heritageoakdental.com/wp-content/uploads/2019/04/HIPAA-updated1-3-21-18.pdf
+4. **Dental Materials Fact Sheet** — https://heritageoakdental.com/wp-content/uploads/2019/03/Dental-Materials-Fact-Sheet-1.pdf
+5. **Financial Policy** — https://www.heritageoakdental.com/wp-content/uploads/2019/04/HOD-Financial-Policy.pdf
+
+All links open in new tabs.
+
+---
+
+## PAGE 9: FINANCE (/resources/finance)
+
+### Financial Policy
+"To help you get the care you need, we have a number of convenient payment options. Before we get started with treatment, we'll discuss your needs and make payment arrangements that work for you. We accept most dental plans, and will coordinate with your provider to help you to get the most out of your dental insurance benefits. We also accept MasterCard, Visa, and Discover Card. We extend cash discounts courtesy for payment in full by cash. Our office policy is to collect your portion at the time services are rendered. We accept several forms of payment and also offer financing for larger treatment plans. Please refer to our Financial Policy for more information."
+
+"Many of our patients find it convenient to spread out treatment costs into low monthly payments. We work with a number of different financing companies, and each offers extended payment plans. We'll go over all the options to find the plan that works for you."
+
+### Heritage Oak Dental Smile Club
+"The Heritage Dental Plan is a flexible alternative to insurance. Enroll today and enjoy no claim forms, no deductibles, no annual maximums, no waiting period, no limitations, and specialty service discounts! To learn more please call (916) 626-4050!"
+
+### Dental Insurance
+Full insurance section with explanations of indemnity plans, PPO plans, and HMO/DHMO plans. Include all the policy text about filing claims, patient responsibility, and the disclaimer about not compromising care based on insurance.
+
+Key points to include:
+- They are NOT contracted with any HMO or DHMO plans
+- They ARE a preferred provider for most PPO plans
+- Traditional indemnity plans welcome
+- They will submit initial claims but primary relationship is with patients
+
+### CareCredit
+"Care credit has a number of affordable plans, including up to 18 months interest free for Invisalign treatment. We also offer in-house financing in the form of monthly payments after a down payment for dental treatment with 0% financing for the length of treatment."
+
+### Network List
+Display in a multi-column grid:
+Active Duty Dental Program United Concordia Tricare, Ameriben Solutions, America's Choice Healthplans, Ameritas, Anthem BCBS Maine, Anthem BCBS Missouri, Anthem BCBS of CA, Anthem BCBS of CT, Anthem BCBS of GA, Anthem BCBS Ohio, Anthem BCBS Wisconsin, Anthem Blue Cross Life & Health, Assurant Employee Benefits, Assurant Health, Blue Cross of Idaho, Boon Chapman Benefit Administrators, CBCA Administrators, Cigna, Citizens Security Life Ins Co, Commercial Travelers, Corporate Benefit Services, Dearborn National, Delta Dental PPO, Delta Dental Premier, Dental Select, Dentegra, Direct Dental Administrators LLC, DNOA, Empire Blue Cross, Empire Blue Cross Blue Shield, First Dental Health, GoldenWest, Group Administrators, Guardian, Healthscope, HealthSmart Benefit Solutions, Humana, Independent Health, Integrity Administrators, International Benefits Administrators, Kansas City Life Ins Co, Maxon Administrators, Meritain Health, Metlife, Nippon Life Insurance Company, NovaNet, Optum Health (UHC), Premier Access, Principal, SISCO, Stratose, The Premier Dental Group, Tricare Metlife, UDC, UMR, United Concordia, United Group Programs
+
+---
+
+## PAGE 10: PRE-TREATMENT INSTRUCTIONS (/resources/pretreatment)
+
+### General Instructions
+"Unless otherwise instructed, take all medications that your physician, as well as your dentist have prescribed with a small sip of water. Please brush your teeth before each appointment and refrain from eating immediately before. You will always be given local anesthesia (numbing medicine) for your dental surgery unless requested not to. If you are unclear about anything, please ask your doctor. Our goal is to provide you with a safe, pleasant and effective anesthetic. In order to do this, it is imperative that we have your full cooperation. Please feel free to ask any questions concerning your dental surgery and/or anesthetic."
+
+### Conscious Sedation
+"Conscious sedation is often referred to as sleep or twilight dentistry. In preparation:"
+- Do not eat any solid foods for 6 hours prior to your appointment.
+- You may drink small amounts of clear liquids up to 3 hours prior to your appointment. (apple juice, clear broth, water)
+- Take any medications you normally would take with a small amount of water.
+- Wear comfortable, loose fitting clothing with short sleeves.
+- Leave jewelry and watches at home.
+- No contact lenses.
+- A responsible adult will need to escort you home from the office.
+- Arrange to have the entire day off. Limit your activities for the day. Make arrangements to have help with children or pets.
+"Your comfort, convenience and safety are our primary concerns. Following these instructions will allow you to have the best experience. If you have any questions, please call the office."
+
+### IV or General Anesthesia
+"Do not eat or drink anything for 8 hours before your scheduled surgery. Your previous meal should be light and easily digestible."
+- Diabetic patients should consult with their doctor about specific directions regarding insulin dosage.
+- Please wear a short-sleeve shirt and loose-fitting clothes. Dress as comfortably as possible and bring a sweater for after surgery.
+- If you wear contact lenses, bring a container and remove them prior to your surgery.
+- Please remove all jewelry prior to arriving.
+- You may, under no circumstances, drive an automobile until 24 hours after the surgery.
+- Be sure a responsible person comes with you on the day of your surgical appointment.
+- Minors must be accompanied by parents or legal guardian. Plan to have someone stay with you all day after the surgery.
+- If you are taking any prescription or non-prescription medications, inform the doctor.
+- You should take your normal medication unless otherwise instructed by your doctor.
+- Take any medication that the doctor has prescribed for you at the designated time.
+- Dentures must be removed at the time of surgery.
+- Do not smoke or consume alcohol 24 hours before your appointment.
+- Do not plan to fly or scuba dive within the week following your surgery.
+
+---
+
+## PAGE 11: POST-TREATMENT INSTRUCTIONS (/resources/posttreatment)
+
+This page should have a list of all 16 treatment types, each expandable/collapsible with full instructions. Include complete content for the ones below. For treatments where detailed content isn't provided, create a brief placeholder with "Please contact our office for specific post-treatment instructions."
+
+### Tooth Extraction — FULL CONTENT:
+
+**Control Bleeding:**
+- Bite firmly on the gauze pack over the surgical area for at least 1/2 hour; then discard it gently.
+- Some blood will ooze from the area of surgery for several hours and it is normal.
+- Do not spit, or suck through a straw, since it can cause dry socket or loss of the blood clot.
+- When bleeding persists at home, place a gauze pad or cold wet tea bag over the area and bite firmly for 30 minutes.
+- Avoid rubbing the area with your tongue.
+- Keep your head elevated on several pillows or sit in a lounge chair for 12 hours.
+- DO NOT SMOKE for at least 24 hours after surgery because this will cause bleeding, pain and interfere with healing. It is recommended to not smoke for 7 days after surgery.
+
+**Rinsing:** Do not rinse your mouth or brush your teeth for the first 6 hours after the surgical appointment. Then use warm salt water (1 teaspoon salt in 1 cup of warm water) after tooth-brushing and every 2 hours.
+
+**Bacterial Plaque Control:** Brush the teeth gently. Avoid the surgical site.
+
+**Rest:** Get plenty of rest, at least 8 to 10 hours of sleep each night. Avoid strenuous exercise during the first 24 hours, and keep the mouth from excessive movement.
+
+**Diet:**
+- Use a liquid or soft diet high in protein.
+- Drink a large volume of water and fruit juices.
+- Do not drink through a straw because this may promote bleeding.
+- Avoid hot food for the first 24 hours after surgery.
+- Eat a soft diet for the first 24 hours after tooth extraction.
+- Avoid foods that require excessive chewing.
+- You can resume a normal diet the day after tooth removal.
+
+**Pain and Discomfort:**
+- Some discomfort is normal after surgery. It can be controlled by taking the pain medication your dentist has prescribed or recommended.
+- Start taking your pain pills before the numbing medication has worn off.
+- Take your pain pill with an 8 oz. glass of water and/or a small amount of food to prevent nausea.
+
+**Swelling and Ice-packs:**
+- Swelling after surgery is a normal body reaction.
+- Swelling reaches its maximum about 48 hours after surgery, and usually lasts 4-6 days.
+- Applying ice packs over the area for the first 24 hours (no longer than 20 minutes at a time) helps control swelling.
+- Heat is not used for swelling.
+
+**Bruising:** You may experience some mild bruising. This is normal and will disappear in 7-14 days.
+
+**Sutures or Stitches:** Your dentist will tell you if and when they need to be removed (usually in about 1 week). Many times stitches are self-dissolving (7-10 days).
+
+**Wisdom Teeth / Surgical Extraction additional notes:**
+- The surgical area will swell, peaking on the 2nd or 3rd postoperative day.
+- Trismus (stiffness) of the muscles may cause difficulty in opening your mouth.
+- You may have a slight earache or sore throat.
+- Your other teeth may ache temporarily (referred pain).
+- If the corners of the mouth are stretched they may dry and crack — keep lips moist.
+- There will be a space where the tooth was removed — rinse after 24 hours with warm salt water.
+- Slight temperature elevation for 24-48 hours is normal.
+
+**Call your Dentist or Emergency Room if:**
+- You experience discomfort you cannot control with pain pills.
+- You have bleeding you cannot control by biting on gauze.
+- You have increased swelling after the third day.
+- You have a fever.
+
+**Keeping Infection Under Control:** The removal of teeth can allow germs to enter the bloodstream. You may need antibiotics if you have: bacterial endocarditis history, heart defects, artificial heart valves, artificial joints, diabetes/impaired immune system, or take steroids.
+
+### Temporary Crown Care — FULL CONTENT:
+
+**Care:** A temporary tooth-colored restoration may be placed to protect the tooth while your new restoration is being made. Avoid heavy chewing and sticky foods. If this temporary does dislodge before your next visit, call us! Do not attempt to place restoration back with anything other than Vaseline. Superglue is not healthy in the oral environment and will disturb the bonding process.
+
+**Cleaning:** Brushing can be accomplished with a gentle motion on the sides of the tooth. When flossing is recommended, place it gently between the teeth, clean the gum areas, then release your inside finger and pull the floss through toward the cheek. Do not draw the floss back between the two teeth. Rinsing with mouthwash twice a day is also recommended.
+
+"You are on your way to receiving the most advanced, state-of-the-art cosmetic and structurally sound restorative dentistry available today. We are excited with what Heritage Oak Dental can do for you and your teeth."
+
+### Orthodontics — FULL CONTENT:
+
+**Oral Hygiene:**
+"Good oral hygiene is vital to orthodontic success. Get used to: Brushing your teeth (not just the brackets) after every meal with an electric toothbrush e.g. Sonicare. Flossing daily as directed. Massaging your gums gently with your toothbrush. Avoiding foods that can damage your braces."
+
+**Before Leaving the Office checklist:**
+- Check wire ends don't poke cheek or tongue
+- Understand what to do until next appointment
+- Have adequate supply of wax, cleaning aids, rubber bands
+- Schedule next appointment before leaving
+
+**Foods to Avoid:**
+Sticky gum, Taffy, Hard candy, Sticky candy (caramels, Sugar Daddies, Starbursts, caramelized apples, Sugar Babies, licorice, toffee, Tootsie Rolls, Now & Laters), Popcorn, Peanuts, Ice, Taco chips, Whole apples and carrots (cut into pieces), Hard French bread crust, Spareribs, Corn-on-the-cob (cut off cob), Bagels, Pizza crusts, Uncooked carrots, Doritos, Pretzels. Plain chocolate is okay if you brush afterwards.
+
+**Emergencies:** Call (916) 626-4050 ext 1 after hours. Instructions for poking wire (use wax or wet cotton), loose band/bracket (save pieces in zip-lock bag), missing elastic/tie, pain (Tylenol recommended, 2-4 days normal), lost retainers.
+
+### Other treatment types to list (use brief placeholder content for each):
+- Deep Cleaning
+- Denture Care
+- Filling or Restorations
+- Fluoride Tray At-Home Use
+- Fluoride Varnish and Gel
+- Immediate Denture
+- Oral Rinses or Mouthwash
+- Root Canal Therapy
+- Socket Preservation
+- Sinus Precautions
+- Surgical Instructions
+- Veneers, Crowns & Bridges
+- Tooth Whitening
+
+---
+
+## PAGE 12: SAVINGS PLAN (/specials/savingsplan)
+
+"Joining the Heritage Oak Dental Savings Plan is the best step you can take to prevent dental disease and maintain a beautiful smile! Don't let the cost of dental care stop you from getting the care you need and deserve. We will keep you on track with regular bi-annual cleanings and exams. Early detection of oral health problems is key in saving you from high costs and dental pain down the road."
+
+**Benefits (display as visual badges/icons):**
+- 2 Exams
+- 1 Emergency Exam
+- 2 Cleanings or 2 Periodontal Maintenance
+- 2 Fluoride Treatments
+- 2 Oral Cancer Screenings
+- 2 Periodontal Screenings
+- All X-rays as Needed
+- 15% Courtesy on all Other Services (cannot be combined with Care Credit)
+- 15% Off Additional Cleanings or Periodontal Maintenance
+- No maximums, No deductible, and No insurance gimmicks
+
+**CTA:** "Give our office a call or click below to sign up." Phone: (916) 626-4050. Link to appointment request form.
+
+**Testimonials:**
+Include the Teresa E. and Taryn D. reviews from the Reviews section.
+
+---
+
+## PAGES 13-21: SERVICE PAGES
+
+Each service page follows the same template:
+- Page title with location: "[Service Name] in Rocklin, CA"
+- Intro paragraph about the service
+- List of specific procedures/treatments offered
+- Detailed content where provided
+- CTA to book appointment or call
+- Internal links to other related services at the bottom
+- Breadcrumb navigation
+
+### Cosmetic Dentistry (/services/cosmetic) — FULL CONTENT:
+
+"There has been a dramatic interest in cosmetic dentistry. We all understand that having a healthy, bright, and beautiful smile enhances our appearance and allows us to smile with confidence. Thanks to the advances in modern cosmetic dentistry, we are able to improve our teeth and smiles with quick, painless and surprisingly affordable treatments that do not destroy the underlying healthy tooth structure!"
+
+Procedures: Composite Fillings, Crowns or Caps, Inlays, Onlays, Prepless Veneers, Porcelain Veneers, Teeth Whitening
+
+**Teeth Whitening detailed section:**
+Full content about home whitening (two visits, custom trays, sensitivity info), in-office whitening (retractor, resin, gel application steps, 48-hour rehydration), how bleaching products work (hydrogen peroxide/oxygen bubbles), and post-treatment care (flossing, anti-sensitivity toothpaste, retreatment schedule). Include reasons for whitening: fluorosis, normal wear, medication staining, yellow/brown stains.
+
+### Other service pages (use general descriptions appropriate to each specialty):
+- General Dentistry (/services/general)
+- Implant Dentistry (/services/implant)
+- Oral & Maxillofacial Surgery (/services/oral)
+- Orthodontics (/services/orthodontics)
+- Pediatric Dentistry (/services/pediatric)
+- Periodontics (/services/periodontics)
+- Restorative Dentistry (/services/restorative)
+- Sedation Dentistry (/services/sedation)
+
+Each should have an informative intro, list of procedures, and booking CTA.
+
+---
+
+## PAGE 22: FAQ (/faq)
+
+Create 14 locally-targeted FAQ questions with FAQPage schema markup. Questions should target searches like:
+- "Best dentist in Rocklin CA"
+- "Does Heritage Oak Dental accept my insurance"
+- "Dentist near Roseville CA"
+- "Emergency dentist Rocklin"
+- "Invisalign Rocklin CA"
+- "Pediatric dentist near me Rocklin"
+- "How much does teeth whitening cost"
+- "Does Heritage Oak Dental offer payment plans"
+- "Sedation dentistry Rocklin CA"
+- "New patient dental forms Rocklin"
+Etc.
+
+---
+
+## SEO REQUIREMENTS (apply to EVERY page)
+
+1. Unique `<title>` tag with "dentist in Rocklin CA" keywords where natural
+2. Unique `<meta description>` for each page
+3. Open Graph + Twitter Card meta tags
+4. JSON-LD structured data on every page:
+   - LocalBusiness/Dentist schema with full NAP, hours, service areas, geo coordinates
+   - BreadcrumbList schema
+   - MedicalProcedure schema on service pages
+   - FAQPage schema on FAQ page
+5. Location-rich H1 headings (e.g., "General Dentistry in Rocklin, CA")
+6. Descriptive alt text on all images with location keywords
+7. Internal links between all service pages
+8. Canonical URLs on every page
+9. Geo meta tags
+10. Schema.org microdata in footer NAP
+11. Service area cities in footer: Rocklin, Roseville, Granite Bay, Lincoln, Loomis, Auburn, Citrus Heights
+
+---
+
+## GLOBAL DESIGN RULES
+
+- Light blue (#1B89C5) and white theme throughout
+- Circular profile photos for all doctors and team members (object-position: top to center heads)
+- Collapsible/accordion sections for doctor credentials to save space
+- All external links open in new tabs
+- Smooth page transitions
+- Scroll-to-top on route changes
+- Breadcrumb navigation on all inner pages
+- Consistent footer and header across all pages
+- Mobile responsive with hamburger menu on small screens
+- Fast loading — optimize images, lazy load where possible
