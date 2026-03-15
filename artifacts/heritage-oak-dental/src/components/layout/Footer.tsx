@@ -7,8 +7,9 @@ const SERVICES_LIST = [
   { label: "Dental Implants", href: "/services/implant" },
   { label: "Orthodontics", href: "/services/orthodontics" },
   { label: "Pediatric Dentistry", href: "/services/pediatric" },
-  { label: "Oral Surgery", href: "/services/oral-surgery" },
+  { label: "Oral Surgery", href: "/services/oral" },
   { label: "Sedation Dentistry", href: "/services/sedation" },
+  { label: "Restorative Dentistry", href: "/services/restorative" },
   { label: "Periodontics", href: "/services/periodontics" },
 ];
 

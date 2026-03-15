@@ -130,7 +130,8 @@ export function FAQ() {
             { label: "Dental Implants", id: "implant" },
             { label: "Orthodontics", id: "orthodontics" },
             { label: "Pediatric Dentistry", id: "pediatric" },
-            { label: "Oral Surgery", id: "oral-surgery" },
+            { label: "Oral Surgery", id: "oral" },
+            { label: "Restorative Dentistry", id: "restorative" },
             { label: "Sedation Dentistry", id: "sedation" },
             { label: "Periodontics", id: "periodontics" },
           ].map((s) => (
