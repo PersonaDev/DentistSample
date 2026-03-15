@@ -1,0 +1,339 @@
+# Heritage Oak Dental — Service Pages Complete Build
+
+This prompt covers ONLY the 9 service pages under the Services dropdown. Each page must be its own route, fully built out with real dental content, procedures, and descriptions. Do not use placeholder text. Every page needs real, detailed, patient-facing dental information.
+
+The Services dropdown in the main navigation must contain exactly these 9 links:
+
+- Cosmetic Dentistry → /services/cosmetic
+- General Dentistry → /services/general
+- Implant Dentistry → /services/implant
+- Oral & Maxillofacial Surgery → /services/oral
+- Orthodontics → /services/orthodontics
+- Pediatric Dentistry → /services/pediatric
+- Periodontics → /services/periodontics
+- Restorative Dentistry → /services/restorative
+- Sedation Dentistry → /services/sedation
+
+---
+
+## TEMPLATE FOR EVERY SERVICE PAGE
+
+Every service page must follow this exact structure:
+
+1. **Breadcrumb:** Home > Services > [Service Name]
+2. **H1:** "[Service Name] in Rocklin, CA"
+3. **Intro paragraph** explaining what the service is and why patients need it
+4. **Procedures offered** — a list of specific treatments under this service category, each with its own expandable/collapsible accordion section containing a detailed description (minimum 3-5 sentences per procedure explaining what it is, why it's done, what the patient can expect, and recovery info where relevant)
+5. **"Why Choose Heritage Oak Dental"** — a short paragraph about the practice's approach to this specific service
+6. **Call to Action:** "Ready to schedule? Call us at (916) 626-4050 or request an appointment online."
+7. **Related Services:** Links to 3 other service pages (e.g., Cosmetic links to General, Restorative, and Sedation)
+
+---
+
+## PAGE 1: COSMETIC DENTISTRY (/services/cosmetic)
+
+**Intro:**
+"There has been a dramatic interest in cosmetic dentistry. We all understand that having a healthy, bright, and beautiful smile enhances our appearance and allows us to smile with confidence. Thanks to the advances in modern cosmetic dentistry, we are able to improve our teeth and smiles with quick, painless and surprisingly affordable treatments that do not destroy the underlying healthy tooth structure!"
+
+**Procedures (each as its own collapsible section with full description):**
+
+### Composite Fillings
+Composite fillings are tooth-colored restorations made from a mixture of plastic and fine glass particles. They are used to repair teeth affected by decay, cracks, or fractures. Unlike silver amalgam fillings, composite fillings are matched to the color of your existing teeth, creating a more natural appearance. The procedure involves removing the decayed portion of the tooth, cleaning the affected area, and placing the composite filling material in layers. A special light is used to harden each layer. The dentist then shapes the composite to fit the tooth and polishes it to prevent staining and early wear. Composite fillings are durable and can withstand moderate pressure from chewing, making them an excellent choice for both front and back teeth.
+
+### Crowns or Caps
+A dental crown is a tooth-shaped cap that is placed over a damaged tooth to restore its shape, size, strength, and appearance. Crowns are recommended when a tooth is significantly decayed, cracked, weakened, or cosmetically flawed beyond what a filling can repair. At Heritage Oak Dental, we use advanced CAD/CAM technology and high-quality porcelain materials to create crowns that look, feel, and function like natural teeth. The process typically involves two visits: the first to prepare the tooth and take impressions, and the second to place the permanent crown. A temporary crown protects your tooth between visits. With proper care, crowns can last 10-15 years or longer.
+
+### Inlays
+Dental inlays are custom-made restorations used to repair mild to moderate tooth decay or damage that is too extensive for a simple filling but doesn't require a full crown. An inlay fits within the cusps (bumps) on the chewing surface of the tooth. They are fabricated from durable materials such as porcelain, composite resin, or gold, and are bonded directly to the tooth surface. Inlays are created in a dental laboratory from impressions taken of your tooth, ensuring a precise fit. They strengthen the tooth structure, resist staining, and can last for decades with proper care. Because they are custom-made, inlays offer a superior fit compared to traditional fillings.
+
+### Onlays
+Dental onlays, sometimes called partial crowns, are similar to inlays but extend over one or more of the cusps of the tooth. They are used when the damage or decay is more extensive than what an inlay can address but not severe enough to warrant a full crown. Onlays are a conservative restoration option because they preserve more of the natural tooth structure than a crown. They are fabricated from porcelain, composite resin, or gold and are custom-made in a dental laboratory. Onlays are bonded to the tooth, providing a strong, long-lasting restoration that protects the weakened tooth while maintaining a natural appearance.
+
+### Prepless Veneers
+Prepless veneers are ultra-thin porcelain shells that are bonded to the front surface of teeth with little to no removal of the existing tooth structure. Unlike traditional veneers, prepless veneers do not require the dentist to grind down or reshape the natural teeth, making the procedure reversible and minimally invasive. They are an excellent option for patients who want to improve the appearance of their smile — correcting minor chips, gaps, discoloration, or slight misalignment — without committing to permanent alterations. The process typically involves taking impressions and having the veneers custom-fabricated in a lab, then bonding them in place during a second visit. Results are immediate and can last 10-20 years.
+
+### Porcelain Veneers
+Porcelain veneers are thin, custom-made shells designed to cover the front surface of teeth to improve their appearance. They are permanently bonded to the teeth and can dramatically change the color, shape, size, and length of your teeth. Veneers are an excellent solution for teeth that are severely discolored, worn down, chipped, broken, misaligned, uneven, or irregularly shaped, or that have gaps between them. The procedure requires removing a small amount of enamel from the tooth surface (about 0.5mm) to accommodate the veneer. Impressions are taken and sent to a dental laboratory where the veneers are custom-crafted. Porcelain veneers resist stains better than composite alternatives and closely mimic the light-reflecting properties of natural teeth.
+
+### Teeth Whitening
+Teeth whitening (or bleaching) is a simple, non-invasive dental treatment used to change the color of natural tooth enamel and is an ideal way to enhance the beauty of your smile. Because having whiter teeth has now become the number one aesthetic concern of most patients, there are a number of ways to whiten teeth.
+
+Since teeth whitening only works on natural tooth enamel, it is important to evaluate replacement of any old fillings, crowns, etc. Replacement of any restorations will be done at least 2 weeks after bleaching so they will match the newly bleached teeth. Teeth whitening is not permanent. A touch-up may be needed every several years, and more often if you smoke, drink coffee, tea, or wine.
+
+**Reasons for teeth whitening:**
+- Fluorosis (excessive fluoridation during tooth development)
+- Normal wear of outer tooth layer
+- Stained teeth due to medications (tetracycline, etc.)
+- Yellow, brown stained teeth
+
+**Home Teeth Whitening:** This usually requires two visits. At the first appointment, impressions (molds) will be made of your teeth to fabricate custom, clear plastic trays. At your second appointment, you will try on the trays for proper fit. The trays are worn with special whitening solution either twice a day for 30 minutes or overnight for a couple of weeks depending on the degree of staining and desired level of whitening. It is normal to experience tooth sensitivity during the time you are whitening your teeth, but it will subside shortly after you have stopped bleaching.
+
+**In-Office Whitening Preparation:** A thorough cleaning is recommended prior to the treatment, to rid the teeth of plaque, tartar and food particles. The dentist will examine the teeth during cleaning to check for fractures, inflammation or decay. Photographs might be taken for before and after comparisons.
+
+**In-Office Whitening Steps:**
+1. A retractor is placed inside the mouth to fully expose the teeth
+2. A hardening resin is applied to the gums to prevent irritation
+3. The gel and blue light are applied to the teeth for twenty minutes
+4. The dentist checks whitening progress
+5. The gel is removed and reapplied for another twenty minutes if necessary
+6. The gel is removed and reapplied for an additional twenty minutes if necessary
+7. The retractors are removed when complete
+8. The mouth is rinsed and new tooth color is measured immediately
+9. Teeth may look incredibly white immediately due to mild dehydration — actual color becomes apparent after 48 hours of rehydration
+
+**Post-Treatment Care:** The dentist recommends flossing once a day, thorough cleaning with anti-sensitivity toothpaste twice a day, and occasional retreatment.
+
+Note: Women who are pregnant or lactating should not seek bleaching treatment.
+
+**Related Services:** General Dentistry, Restorative Dentistry, Sedation Dentistry
+
+---
+
+## PAGE 2: GENERAL DENTISTRY (/services/general)
+
+**Intro:**
+"General dentistry encompasses a broad range of preventive and restorative dental services designed to maintain your oral health throughout every stage of life. At Heritage Oak Dental, our general dentistry services focus on preventing dental problems before they start, diagnosing issues early, and providing effective treatments that preserve your natural teeth. Regular visits are the foundation of a healthy smile, and we make every effort to ensure your experience is comfortable and thorough."
+
+**Procedures (each as its own collapsible section):**
+
+### Comprehensive Oral Exams
+A comprehensive oral exam is your first step toward optimal dental health. During this thorough evaluation, the dentist examines your teeth, gums, jaw joints, bite alignment, and oral tissues. Digital X-rays may be taken to detect issues not visible to the naked eye, such as decay between teeth, bone loss, abscesses, or tumors. The exam includes an oral cancer screening, periodontal assessment, and evaluation of existing dental work. Based on the findings, a personalized treatment plan is developed. New patients and patients who haven't visited in some time should expect this detailed evaluation at their first appointment.
+
+### Professional Teeth Cleaning (Prophylaxis)
+Professional cleanings are essential for maintaining oral health and preventing gum disease. Even with diligent brushing and flossing at home, plaque and tartar can build up in hard-to-reach areas. During a cleaning, a dental hygienist uses specialized instruments to remove plaque and calculus (hardite tartar) from above and below the gum line. The teeth are then polished to remove surface stains and smooth the enamel. Fluoride treatment may be applied to strengthen teeth against decay. For most patients, professional cleanings are recommended every six months, though patients with gum disease may need more frequent visits.
+
+### Digital X-Rays
+Heritage Oak Dental uses state-of-the-art digital radiography to capture detailed images of your teeth, bone, and surrounding tissues. Digital X-rays use significantly less radiation than traditional film X-rays — up to 90% less — making them safer for patients. Images appear instantly on a chairside monitor, allowing the dentist to identify cavities, bone loss, infections, developmental abnormalities, and other conditions that are invisible during a visual examination. These images can be enlarged, enhanced, and easily shared with specialists when needed.
+
+### Fluoride Treatment
+Fluoride treatments help strengthen tooth enamel and protect against decay. The treatment involves applying a concentrated fluoride solution, gel, foam, or varnish to the teeth. Fluoride works by remineralizing weakened enamel and making teeth more resistant to acid attacks from bacteria and sugars. Professional fluoride treatments are especially beneficial for patients who are at higher risk of developing cavities, including children, patients with dry mouth, those with gum disease, patients with crowns or bridges, and patients with a history of frequent cavities.
+
+### Dental Sealants
+Dental sealants are thin, protective coatings applied to the chewing surfaces of the back teeth (premolars and molars), where most cavities in children and teens are found. The sealant quickly bonds into the grooves and depressions of the teeth, forming a protective shield over the enamel. The application is painless, quick, and can effectively protect teeth from decay for up to 10 years. Sealants are particularly recommended for children and teenagers as soon as their permanent molars come in, but adults who are cavity-prone can also benefit from sealant application.
+
+### Oral Cancer Screening
+Oral cancer screening is a routine part of every dental examination at Heritage Oak Dental. The dentist carefully examines the lips, tongue, throat, tissues, and gums for any signs of abnormalities, including sores, discolorations, lumps, or rough patches. Early detection is critical — when caught early, oral cancer has a significantly higher survival rate. Risk factors include tobacco use, heavy alcohol consumption, excessive sun exposure, and HPV. We recommend annual screenings for all patients and more frequent checks for those with elevated risk factors.
+
+### Night Guards and Mouth Guards
+Custom-fitted night guards protect your teeth from the damaging effects of bruxism (teeth grinding and clenching) that commonly occurs during sleep. Over time, bruxism can cause tooth wear, fractures, jaw pain, headaches, and TMJ disorders. A custom night guard is fabricated from impressions of your teeth, providing a precise and comfortable fit that over-the-counter options cannot match. We also create custom sports mouth guards that offer superior protection for athletes of all ages. Custom mouth guards fit better, allow easier breathing and speaking, and provide significantly more protection than store-bought alternatives.
+
+### Emergency Dental Care
+Dental emergencies can happen at any time, and Heritage Oak Dental is committed to providing prompt care when you need it most. Common dental emergencies include severe toothaches, knocked-out teeth, broken or chipped teeth, lost fillings or crowns, abscesses, and soft tissue injuries. If you experience a dental emergency, call our office immediately at (916) 626-4050. Quick action can often save a damaged or knocked-out tooth. We reserve time in our schedule to accommodate emergency patients and strive to see you the same day whenever possible.
+
+**Related Services:** Cosmetic Dentistry, Restorative Dentistry, Pediatric Dentistry
+
+---
+
+## PAGE 3: IMPLANT DENTISTRY (/services/implant)
+
+**Intro:**
+"Dental implants are the gold standard for replacing missing teeth. They are titanium posts that are surgically placed into the jawbone, where they serve as artificial tooth roots. Once the implant integrates with the bone — a process called osseointegration — a custom crown, bridge, or denture is attached, creating a restoration that looks, feels, and functions like natural teeth. At Heritage Oak Dental, Dr. Douglas has advanced training in dental implant placement, allowing us to handle the entire implant process in-house."
+
+**Procedures (each as its own collapsible section):**
+
+### Single Tooth Implants
+A single dental implant replaces one missing tooth without affecting the adjacent healthy teeth. The implant consists of three parts: the titanium post placed in the jawbone, an abutment that connects the post to the restoration, and a custom porcelain crown that matches your natural teeth. The procedure is typically completed in two phases over 3-6 months. First, the implant post is placed and allowed to heal and integrate with the bone. Then the abutment and crown are attached. Single tooth implants have a success rate of over 95% and with proper care can last a lifetime. They prevent bone loss that occurs when a tooth is missing and maintain the natural spacing of your teeth.
+
+### Implant-Supported Bridges
+When multiple adjacent teeth are missing, an implant-supported bridge provides a fixed, permanent solution without requiring an implant for every missing tooth. Typically, two implants are placed at either end of the gap, and a bridge of connected crowns spans the space between them. This approach is more conservative and cost-effective than placing individual implants for each missing tooth. Implant-supported bridges preserve jawbone density, restore full chewing function, and eliminate the need for removable partial dentures. They look and function like natural teeth and do not require the grinding down of adjacent healthy teeth that traditional bridges demand.
+
+### Implant-Supported Dentures
+For patients who are missing all or most of their teeth, implant-supported dentures offer a revolutionary alternative to traditional removable dentures. By anchoring a full denture to 4-6 strategically placed implants, patients experience dramatically improved stability, comfort, and chewing ability. There are two types: fixed (permanently attached, removable only by a dentist) and removable (snap-on overdentures that click onto implant attachments for easy cleaning). Implant-supported dentures eliminate common complaints about traditional dentures — slipping, clicking, sore spots, and restricted diet. They also preserve jawbone structure, preventing the facial collapse that occurs with long-term denture wear.
+
+### Bone Grafting
+Bone grafting is a procedure that rebuilds or regenerates jawbone that has been lost due to tooth extraction, gum disease, injury, or long-term denture wear. Adequate bone volume and density are essential for successful dental implant placement. During a bone graft, bone material — which may come from your own body, a donor, an animal source, or synthetic materials — is placed in the area of bone deficiency. Over several months, the graft material integrates with your natural bone, creating a strong foundation for implant placement. Modern bone grafting techniques have made implant treatment possible for many patients who were previously told they didn't have enough bone.
+
+### All-on-4 / All-on-6 Implants
+The All-on-4 and All-on-6 concepts are innovative treatment approaches that provide a full arch of fixed teeth supported by just four or six strategically angled implants. This technique often eliminates the need for bone grafting by utilizing the available bone more efficiently. Patients can frequently receive a temporary set of fixed teeth on the same day as implant placement. The final prosthesis is a custom-designed, permanent bridge that is indistinguishable from natural teeth. This approach offers a faster, more affordable path to a full smile restoration compared to placing individual implants for each missing tooth.
+
+### Mini Dental Implants
+Mini dental implants (MDIs) are smaller-diameter implants that can be used in situations where standard implants may not be feasible due to insufficient bone width or other anatomical limitations. They are commonly used to stabilize lower dentures, replace small teeth, or serve as temporary anchorage devices during orthodontic treatment. MDIs can often be placed in a single visit with minimal invasiveness, faster healing times, and lower cost than conventional implants. While they may not be suitable for all situations, mini implants provide an excellent option for patients seeking improved denture stability or who cannot undergo more extensive surgical procedures.
+
+**Related Services:** Oral & Maxillofacial Surgery, Restorative Dentistry, Sedation Dentistry
+
+---
+
+## PAGE 4: ORAL & MAXILLOFACIAL SURGERY (/services/oral)
+
+**Intro:**
+"Oral and maxillofacial surgery encompasses surgical procedures involving the mouth, jaw, face, and skull. At Heritage Oak Dental, we provide a range of oral surgery services in the comfort of our modern office, with sedation options available to ensure your comfort throughout any procedure. Dr. Douglas has advanced training in oral surgery techniques, allowing us to handle many surgical needs without referring patients to outside specialists."
+
+**Procedures (each as its own collapsible section):**
+
+### Wisdom Teeth Extraction
+Wisdom teeth, or third molars, are the last teeth to develop and often don't have adequate room to emerge properly. Impacted wisdom teeth can grow sideways, partially emerge, or remain trapped beneath the gum and bone, potentially causing pain, infection, cyst formation, damage to adjacent teeth, and gum disease. Our team evaluates wisdom teeth using advanced 3D imaging to plan precise, minimally invasive extractions. The procedure is performed under local anesthesia, conscious sedation, or IV sedation depending on the complexity and patient preference. Most patients recover within 3-5 days with proper aftercare.
+
+### Surgical Tooth Extraction
+Some teeth require surgical extraction due to severe decay, fracture below the gum line, impaction, or complex root anatomy. Unlike a simple extraction where the tooth is loosened and removed with forceps, surgical extraction may involve making an incision in the gum tissue, removing bone around the tooth, or sectioning the tooth into pieces for easier removal. Heritage Oak Dental uses gentle techniques and advanced technology to minimize trauma and promote faster healing. Various sedation options are available to ensure your comfort during the procedure.
+
+### Bone Grafting and Ridge Preservation
+After a tooth is extracted, the surrounding bone begins to resorb and shrink. Ridge preservation is a bone grafting procedure performed at the time of extraction to maintain the bone volume and shape of the jaw ridge. Bone graft material is placed into the empty socket and covered with a protective membrane. This procedure is especially important when a dental implant is planned for the extraction site, as it preserves the bone needed for successful implant placement. Without ridge preservation, significant bone loss can occur within weeks to months after extraction, potentially requiring more extensive grafting later.
+
+### Frenectomy
+A frenectomy is a minor surgical procedure to remove or modify a frenum — the small fold of tissue that connects the lips, cheeks, or tongue to the gum area. An abnormally tight or thick frenum can cause issues such as tongue-tie (restricted tongue movement affecting speech and eating), lip-tie (which can create a gap between the front teeth), and gum recession. The procedure is quick, typically taking 15-30 minutes, and can be performed with a dental laser for minimal bleeding and faster healing. Frenectomies are commonly performed on infants, children, and adults.
+
+### Pre-Prosthetic Surgery
+Pre-prosthetic surgery is performed to prepare the mouth for the placement of a prosthesis such as dentures. For a denture to fit properly, the bone ridge must be the proper shape and size. When teeth are extracted, the underlying bone may heal irregularly, creating sharp edges, bumps, or uneven areas that make denture wearing uncomfortable. Pre-prosthetic surgery smooths and reshapes the bone, removes excess gum tissue, or reduces bony ridges to create an ideal foundation for comfortable, stable dentures.
+
+### Biopsy and Oral Pathology
+Any unusual growth, sore, discoloration, or lesion in the mouth that persists for more than two weeks should be evaluated. A biopsy involves removing a small sample of tissue for laboratory analysis to determine whether a growth is benign, precancerous, or cancerous. Early detection of oral pathology is essential for successful treatment outcomes. Heritage Oak Dental performs biopsies in-office and works closely with oral pathology laboratories to ensure accurate and timely diagnosis.
+
+**Related Services:** Implant Dentistry, Sedation Dentistry, General Dentistry
+
+---
+
+## PAGE 5: ORTHODONTICS (/services/orthodontics)
+
+**Intro:**
+"A straight, properly aligned smile isn't just about aesthetics — it's about health. Misaligned teeth can lead to difficulty cleaning, increased risk of decay and gum disease, abnormal wear, jaw pain, and speech difficulties. Heritage Oak Dental offers comprehensive orthodontic solutions for patients of all ages, from traditional braces to modern clear aligner systems like Invisalign. Dr. Douglas has advanced training in orthodontics with both braces and clear aligners."
+
+**Procedures (each as its own collapsible section):**
+
+### Traditional Metal Braces
+Traditional metal braces remain one of the most effective methods for correcting complex orthodontic issues. Modern metal braces are smaller, more comfortable, and more efficient than ever before. They consist of high-grade stainless steel brackets bonded to each tooth and connected by an archwire that guides teeth into proper alignment. Elastic bands (ligatures) hold the wire to the brackets and can be customized in various colors. Metal braces are ideal for treating severe crowding, significant bite issues, and complex tooth movements. Treatment time varies from 12-36 months depending on the severity of the case.
+
+### Clear Ceramic Braces
+Clear ceramic braces function identically to metal braces but use tooth-colored or clear brackets that blend with the natural tooth color, making them far less noticeable. They are a popular choice for adult patients and older teens who want the effectiveness of traditional braces with a more discreet appearance. Ceramic braces are strong and durable, though they require more careful maintenance to prevent staining of the clear elastic ties. Treatment time is comparable to metal braces, and they can address the same range of orthodontic issues.
+
+### Invisalign Clear Aligners
+Invisalign uses a series of custom-made, virtually invisible plastic aligners to gradually shift teeth into their desired positions. Each set of aligners is worn for approximately 1-2 weeks before moving to the next set in the series. Invisalign aligners are removable, allowing you to eat, drink, brush, and floss normally — a significant advantage over fixed braces. They are ideal for treating mild to moderate crowding, spacing issues, and certain bite problems. Heritage Oak Dental offers Invisalign for both adults and teens. Treatment time typically ranges from 6-18 months. CareCredit financing with up to 18 months interest-free is available for Invisalign treatment.
+
+### Retainers
+After active orthodontic treatment is complete, retainers are essential to maintain your new smile. Without retention, teeth have a natural tendency to shift back toward their original positions. Heritage Oak Dental provides both fixed (bonded) retainers and removable retainers depending on your specific needs. Fixed retainers are thin wires bonded to the back of the front teeth and provide continuous retention without any patient compliance required. Removable retainers can be clear (Essix-style) or traditional (Hawley-style with a wire and acrylic). Wearing your retainer as directed is critical for long-term orthodontic success.
+
+### Early Orthodontic Treatment (Phase I)
+The American Association of Orthodontists recommends that children receive their first orthodontic evaluation by age 7. Early treatment, also called Phase I or interceptive orthodontics, addresses developing problems before they become more serious. By guiding jaw growth and tooth eruption, early intervention can create room for crowded teeth, correct bite problems, reduce the need for tooth extraction, and shorten the duration of later orthodontic treatment. Not all children need early treatment, but a timely evaluation allows us to monitor development and intervene at the optimal time if needed.
+
+**Related Services:** Cosmetic Dentistry, Pediatric Dentistry, General Dentistry
+
+---
+
+## PAGE 6: PEDIATRIC DENTISTRY (/services/pediatric)
+
+**Intro:**
+"We believe that positive dental experiences in childhood create a foundation for lifelong oral health. Heritage Oak Dental provides gentle, compassionate dental care for infants, children, and adolescents in a warm, welcoming environment. Our office features a dedicated kids' play area to help young patients feel comfortable and at ease. We recommend that children visit the dentist by their first birthday or within six months of their first tooth erupting."
+
+**Procedures (each as its own collapsible section):**
+
+### First Dental Visit
+A child's first dental visit is an important milestone that sets the tone for their relationship with dental care. At Heritage Oak Dental, we make first visits fun and low-pressure. The appointment typically includes a gentle examination of your child's teeth, jaws, bite, gums, and oral tissues. We check for cavities and assess growth and development. We also discuss oral hygiene practices, diet recommendations, fluoride needs, and habits such as thumb-sucking or pacifier use. Parents are welcome and encouraged to accompany their child during the appointment.
+
+### Children's Teeth Cleaning
+Professional cleanings for children are similar to adult cleanings but tailored to be gentle, educational, and engaging. The hygienist removes plaque and tartar buildup, polishes the teeth, and applies fluoride treatment. These visits are also an opportunity to teach children proper brushing and flossing techniques in a fun, interactive way. Regular cleanings every six months help prevent cavities, catch problems early, and establish healthy habits that will benefit your child for life.
+
+### Dental Sealants for Kids
+Children's molars have deep grooves and pits where food particles and bacteria easily become trapped, making them highly susceptible to cavities. Dental sealants are thin, protective coatings painted onto the chewing surfaces of the back teeth. The sealant flows into the grooves and hardens, creating a smooth barrier that prevents food and bacteria from getting stuck. The application is quick, painless, and does not require any drilling or numbing. Sealants can reduce the risk of molar cavities by up to 80% and are recommended as soon as permanent molars erupt, typically around ages 6 and 12.
+
+### Fluoride Treatments for Children
+Professional fluoride treatments are an important part of pediatric preventive care. Children's developing teeth are especially vulnerable to decay, and fluoride strengthens enamel and helps repair early stages of tooth decay before cavities form. During a professional treatment, a concentrated fluoride varnish, gel, or foam is applied to the teeth. The treatment is quick and painless. We may recommend fluoride treatments every 3-6 months depending on your child's cavity risk. We also provide guidance on appropriate fluoride use at home, including toothpaste selection and supplementation if needed.
+
+### Space Maintainers
+When a baby tooth is lost prematurely — due to decay, injury, or extraction — the surrounding teeth can shift into the empty space, potentially blocking the permanent tooth from erupting properly. A space maintainer is a custom-made appliance that holds the space open until the permanent tooth is ready to come in. Space maintainers can be fixed (cemented in place) or removable, and they are designed to be comfortable and unobtrusive. This simple preventive measure can avoid the need for more complex and costly orthodontic treatment later.
+
+### Habit Counseling
+Prolonged oral habits such as thumb-sucking, finger-sucking, tongue-thrusting, and pacifier use can affect the development of the teeth and jaws if they continue beyond age 3-4. Heritage Oak Dental provides gentle, positive habit counseling for children and parents. We assess the impact of the habit on dental development and provide age-appropriate strategies and appliances when needed to help children break the habit before permanent damage occurs. Our approach is always encouraging and supportive — never punitive.
+
+**Related Services:** General Dentistry, Orthodontics, Sedation Dentistry
+
+---
+
+## PAGE 7: PERIODONTICS (/services/periodontics)
+
+**Intro:**
+"Periodontics focuses on the prevention, diagnosis, and treatment of diseases affecting the gums and supporting structures of the teeth. Gum disease (periodontal disease) is one of the most common dental conditions and a leading cause of tooth loss in adults. At Heritage Oak Dental, we provide comprehensive periodontal care ranging from preventive maintenance to advanced surgical treatments. Dr. Douglas has specialized training in tissue grafting and other periodontal procedures."
+
+**Procedures (each as its own collapsible section):**
+
+### Scaling and Root Planing (Deep Cleaning)
+Scaling and root planing is a non-surgical procedure used to treat gum disease. It is essentially a deeper, more thorough cleaning that goes below the gum line. Scaling involves removing plaque and tartar (calculus) from the tooth surfaces and beneath the gums. Root planing smooths the root surfaces, which helps the gums reattach to the teeth and eliminates rough areas where bacteria tend to accumulate. The procedure is typically performed under local anesthesia for comfort and may be completed in one or multiple visits depending on the severity of the disease. Most patients experience significant improvement in gum health following treatment.
+
+### Periodontal Maintenance
+After active periodontal treatment such as scaling and root planing, ongoing periodontal maintenance is essential to prevent disease recurrence. Periodontal maintenance visits are more thorough than routine cleanings and are typically scheduled every 3-4 months. During these visits, the hygienist measures periodontal pocket depths, removes plaque and calculus above and below the gum line, polishes the teeth, and evaluates the overall health of the gums. Consistent periodontal maintenance has been shown to significantly reduce tooth loss and maintain the results achieved through initial treatment.
+
+### Gum Grafting (Tissue Grafting)
+Gum recession exposes the tooth roots, which can cause sensitivity, increase the risk of root decay, and create an unaesthetic appearance. Gum grafting is a surgical procedure that covers exposed roots by transplanting gum tissue to the affected areas. There are several types of gum grafts: connective tissue grafts (the most common, using tissue from under the palate), free gingival grafts (using tissue directly from the palate), and pedicle grafts (using tissue from near the affected tooth). Dr. Douglas has advanced training in tissue grafting procedures and uses modern techniques to minimize discomfort and promote optimal healing.
+
+### Crown Lengthening
+Crown lengthening is a surgical procedure that reshapes or removes gum tissue and sometimes bone to expose more of a tooth's structure. It is performed for both restorative and cosmetic purposes. Restoratively, crown lengthening may be needed when a tooth is decayed, broken below the gum line, or has insufficient tooth structure for a crown or bridge. Cosmetically, it is used to correct a "gummy smile" where excessive gum tissue covers the teeth, making them appear short. The procedure creates a more balanced, aesthetically pleasing gum line and provides the dentist with adequate tooth structure for successful restorations.
+
+### Pocket Reduction Surgery
+When periodontal disease has progressed to the point where deep pockets have formed between the teeth and gums, scaling and root planing alone may not be sufficient. Pocket reduction surgery (also called flap surgery or osseous surgery) involves folding back the gum tissue, removing disease-causing bacteria and tartar from the deep pockets, and then securing the tissue into a position that reduces pocket depth. In some cases, irregular bone surfaces are smoothed to eliminate areas where bacteria can hide. Reducing pocket depth makes it easier for patients and dental professionals to keep the area clean, halting the progression of disease.
+
+### Laser Gum Treatment
+Heritage Oak Dental utilizes dental laser technology for various periodontal procedures. Laser treatment can be used to remove diseased gum tissue, reshape the gum line, eliminate bacteria from periodontal pockets, and promote tissue regeneration. Advantages of laser gum treatment include reduced bleeding, less swelling, minimized discomfort, faster healing times, and often no need for sutures. Laser therapy can be used as a standalone treatment or in conjunction with traditional periodontal procedures for enhanced results.
+
+**Related Services:** General Dentistry, Implant Dentistry, Restorative Dentistry
+
+---
+
+## PAGE 8: RESTORATIVE DENTISTRY (/services/restorative)
+
+**Intro:**
+"Restorative dentistry focuses on repairing and restoring damaged, decayed, or missing teeth to their full function and appearance. Whether you need a simple filling or a complete smile reconstruction, Heritage Oak Dental uses the latest materials, techniques, and technology — including CAD/CAM, digital impressions, and 3D imaging — to deliver durable, natural-looking results. Our goal is always to preserve as much natural tooth structure as possible while creating restorations that look and feel like your own teeth."
+
+**Procedures (each as its own collapsible section):**
+
+### Dental Fillings
+When a tooth develops a cavity, the decayed portion must be removed and replaced with a filling material to restore the tooth's shape and function. Heritage Oak Dental primarily uses tooth-colored composite resin fillings that blend seamlessly with your natural teeth. Composite fillings are bonded directly to the tooth structure, which can actually strengthen the remaining tooth. The procedure is typically completed in a single visit and involves removing the decay, cleaning the area, and applying the composite material in layers. Each layer is hardened with a special curing light before the final shaping and polishing.
+
+### Dental Crowns
+A dental crown completely covers and encases a damaged tooth, restoring its shape, size, strength, and appearance. Crowns are recommended for teeth with large cavities that can't support fillings, cracked or weakened teeth, teeth that have had root canal treatment, severely worn or misshapen teeth, and teeth supporting dental bridges. Heritage Oak Dental uses advanced CAD/CAM technology to design and create precise, natural-looking porcelain crowns. The process typically requires two visits — one for preparation and impressions, and one for final placement.
+
+### Dental Bridges
+A dental bridge literally bridges the gap created by one or more missing teeth. A traditional bridge consists of crowns placed on the teeth on either side of the gap (abutment teeth) with an artificial tooth (pontic) suspended between them. Bridges restore your ability to chew and speak properly, maintain facial shape, prevent remaining teeth from shifting, and distribute bite forces correctly. Heritage Oak Dental also offers implant-supported bridges for patients who prefer not to modify adjacent healthy teeth. With proper care and oral hygiene, bridges can last 10-15 years or longer.
+
+### Dentures (Full and Partial)
+Dentures are removable appliances that replace missing teeth and surrounding tissues. Full dentures replace all teeth in an arch and rest directly on the gums, while partial dentures replace some missing teeth and are held in place by clasps that attach to remaining natural teeth. Modern dentures are more comfortable, natural-looking, and functional than ever before. Heritage Oak Dental creates custom dentures that are precisely fitted to your mouth for optimal comfort, appearance, and function. We also offer implant-supported dentures for dramatically improved stability and chewing ability.
+
+### Root Canal Therapy
+Root canal therapy is a procedure to save a tooth that is severely infected or damaged at its core. Inside each tooth is a soft tissue called the pulp, which contains nerves and blood vessels. When the pulp becomes infected due to deep decay, repeated dental procedures, cracks, or trauma, it can cause severe pain and lead to an abscess. During root canal therapy, the infected pulp is removed, the inside of the tooth is cleaned and disinfected, and the space is filled and sealed. A crown is typically placed afterward to protect and restore the tooth. Contrary to popular belief, modern root canal therapy is no more uncomfortable than having a filling placed.
+
+### Inlays and Onlays
+Inlays and onlays are indirect restorations used when a tooth has too much damage for a filling but not enough to require a full crown. An inlay fits within the cusps of the tooth, while an onlay extends over one or more cusps. They are custom-fabricated in a dental laboratory from porcelain, composite resin, or gold, ensuring a precise fit and natural appearance. Inlays and onlays are bonded to the tooth, providing a strong, long-lasting restoration that preserves more natural tooth structure than a crown. They are sometimes called partial crowns and represent a conservative, tooth-preserving approach to restoration.
+
+### Full Mouth Reconstruction
+Full mouth reconstruction is a comprehensive treatment plan that addresses all aspects of dental health simultaneously — combining restorative, cosmetic, periodontal, and sometimes orthodontic treatments to completely rebuild the smile. This approach is recommended for patients with multiple missing teeth, severely worn dentition, extensive decay, trauma, or bite problems. The process begins with a thorough evaluation, diagnostic records, and a detailed treatment plan. Treatment may include crowns, bridges, implants, veneers, gum treatment, and orthodontics, all coordinated for optimal functional and aesthetic results.
+
+**Related Services:** Cosmetic Dentistry, Implant Dentistry, General Dentistry
+
+---
+
+## PAGE 9: SEDATION DENTISTRY (/services/sedation)
+
+**Intro:**
+"We understand that many patients experience anxiety about dental visits, and we never want fear to prevent anyone from receiving the care they need. Heritage Oak Dental offers multiple levels of sedation to ensure every patient can receive comfortable, stress-free dental care. Dr. Douglas has advanced training in IV sedation, and our team is experienced in monitoring patients throughout sedation procedures. Whether you need help relaxing during a routine cleaning or require deeper sedation for a surgical procedure, we have options to meet your needs."
+
+**Procedures (each as its own collapsible section):**
+
+### Nitrous Oxide (Laughing Gas)
+Nitrous oxide, commonly known as laughing gas, is the mildest form of sedation available. It is administered through a small mask placed over the nose and takes effect within minutes. Patients remain fully conscious and able to respond to instructions, but feel relaxed, calm, and less aware of the dental procedure. One of the biggest advantages of nitrous oxide is that its effects wear off almost immediately after the mask is removed — patients can drive themselves home and resume normal activities right away. Nitrous oxide is safe for both adults and children and can be used for any dental procedure.
+
+### Oral Sedation
+Oral sedation involves taking a prescribed medication (typically a benzodiazepine such as triazolam) before your appointment. The medication produces a moderate level of sedation — patients feel drowsy and deeply relaxed but remain conscious. Some patients become drowsy enough to fall asleep during the procedure, though they can be easily awakened. Oral sedation is ideal for patients with moderate dental anxiety, those undergoing lengthy procedures, or patients with a strong gag reflex. Because the medication takes time to take effect, it is typically taken about an hour before the appointment. A responsible adult must drive you to and from the office.
+
+### IV Sedation
+IV (intravenous) sedation delivers sedative medication directly into the bloodstream through a small needle in the arm or hand. This allows the dentist to precisely control the level of sedation throughout the procedure. IV sedation produces a deeper level of relaxation than oral sedation, and most patients have little to no memory of the procedure afterward. Patients remain in a semi-conscious state and can still respond to verbal commands, but feel deeply relaxed and unaware of the dental work being performed. Dr. Douglas has advanced training in IV sedation administration and monitoring, ensuring the highest level of safety and comfort. IV sedation is ideal for patients with severe dental anxiety, those undergoing extensive procedures, and patients who need multiple treatments completed in a single visit.
+
+### General Anesthesia
+General anesthesia produces a state of complete unconsciousness and is reserved for the most complex surgical procedures or for patients who cannot tolerate treatment under lighter forms of sedation. Under general anesthesia, patients are completely asleep and unaware of the procedure. Heritage Oak Dental provides this option for appropriate cases, with full patient monitoring throughout the procedure including heart rate, blood pressure, oxygen levels, and breathing. Strict fasting requirements apply — patients must not eat or drink for 8 hours before the procedure. A responsible adult must accompany the patient and provide transportation and supervision for 24 hours following the procedure.
+
+### Sedation for Children
+Some children experience significant anxiety about dental treatment, have difficulty sitting still for extended procedures, or have special needs that make traditional dental care challenging. Heritage Oak Dental offers age-appropriate sedation options for pediatric patients, including nitrous oxide and, when necessary, deeper sedation. Our team takes extra care to ensure young patients are safe and comfortable throughout any sedation procedure. Parents are fully informed about the sedation process, receive detailed pre- and post-operative instructions, and are welcome to be present during treatment.
+
+**Related Services:** General Dentistry, Oral & Maxillofacial Surgery, Pediatric Dentistry
+
+---
+
+## IMPORTANT IMPLEMENTATION NOTES
+
+1. Every procedure description must be in a collapsible/accordion section — the page should NOT show all content expanded by default. Show the procedure name as a clickable header with a chevron icon. Click to expand/collapse with smooth animation.
+
+2. Each service page must have JSON-LD MedicalProcedure schema markup for SEO.
+
+3. Each service page title tag should follow the pattern: "[Service] Rocklin CA | Heritage Oak Dental" (e.g., "Cosmetic Dentistry Rocklin CA | Heritage Oak Dental")
+
+4. Each service page meta description should be unique and include "Rocklin" and "Heritage Oak Dental."
+
+5. The Related Services section at the bottom of each page should show 3 service cards with links, matching the card style used on the homepage services grid.
+
+6. All pages must be fully responsive and match the existing site design (light blue #1B89C5 and white theme).
