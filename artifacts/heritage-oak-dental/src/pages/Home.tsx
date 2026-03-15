@@ -1,7 +1,19 @@
 import { Link } from "wouter";
-import { ArrowRight, Star, Clock, MapPin, Calendar, Phone } from "lucide-react";
+import { ArrowRight, Star, Clock, MapPin, Calendar, Phone, Sparkles, ShieldCheck, Zap, Stethoscope, AlignCenter, Heart, Leaf, Wrench, Moon } from "lucide-react";
 import { SERVICES, TEAM } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
+
+const SERVICE_ICONS: Record<string, React.ReactNode> = {
+  cosmetic:     <Sparkles className="w-7 h-7" />,
+  general:      <ShieldCheck className="w-7 h-7" />,
+  implant:      <Zap className="w-7 h-7" />,
+  oral:         <Stethoscope className="w-7 h-7" />,
+  orthodontics: <AlignCenter className="w-7 h-7" />,
+  pediatric:    <Heart className="w-7 h-7" />,
+  periodontics: <Leaf className="w-7 h-7" />,
+  restorative:  <Wrench className="w-7 h-7" />,
+  sedation:     <Moon className="w-7 h-7" />,
+};
 
 export function Home() {
   return (
@@ -65,44 +77,41 @@ export function Home() {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="py-24 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Dental Services in Rocklin, CA</h2>
-            <p className="text-lg text-muted-foreground text-balance">
-              Whatever your dental needs we are ready to provide you with exceptional care. Your smile is our priority so please use this information to become informed about your oral health and dental treatment.
+      <section className="py-20 relative" style={{ background: "linear-gradient(135deg, #0d6ea0 0%, #1B89C5 45%, #1a7db5 100%)" }}>
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Dental Services in Rocklin, CA</h2>
+            <p className="text-lg text-blue-100">
+              Whatever your dental needs we are ready to provide you with exceptional care. Your smile is our priority.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {SERVICES.map((service) => (
-              <div key={service.id}>
-                <Link 
-                  href={`/services/${service.id}`}
-                  className="group block h-full bg-white rounded-3xl overflow-hidden border border-border hover:shadow-xl hover:border-primary/30 transition-all duration-300"
-                >
-                  <div className="relative h-48 overflow-hidden bg-muted">
-                    <img 
-                      src={`${import.meta.env.BASE_URL}images/${service.image}`}
-                      alt={service.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <h3 className="absolute bottom-4 left-6 text-xl font-bold text-white">
-                      {service.title}
-                    </h3>
-                  </div>
-                  <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
-                    <p className="text-muted-foreground mb-6 flex-1 line-clamp-3">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center text-primary font-semibold gap-2 group-hover:gap-3 transition-all">
-                      Learn More <ArrowRight className="w-5 h-5" />
-                    </div>
-                  </div>
-                </Link>
-              </div>
+              <Link
+                key={service.id}
+                href={`/services/${service.id}`}
+                className="group flex items-start gap-4 p-5 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 transition-all duration-200 backdrop-blur-sm"
+              >
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 group-hover:bg-white/30 flex items-center justify-center text-white transition-colors">
+                  {SERVICE_ICONS[service.id]}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-bold text-white mb-1">{service.title}</h3>
+                  <p className="text-blue-100 text-sm line-clamp-2 leading-snug">{service.description}</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-white/50 group-hover:text-white group-hover:translate-x-1 transition-all flex-shrink-0 mt-1" />
+              </Link>
             ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/services">
+              <span className="inline-block bg-white text-[#1B89C5] font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg">
+                View All Services
+              </span>
+            </Link>
           </div>
         </div>
       </section>
