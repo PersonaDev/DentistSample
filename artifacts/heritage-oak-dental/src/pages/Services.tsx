@@ -34,7 +34,7 @@ export function Services() {
               className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg hover:border-[#1B89C5]/40 transition-all duration-300"
             >
               <div className="flex items-center justify-center h-36 bg-gradient-to-br from-[#E8F4FA] to-[#D0EAF7]">
-                <div className="w-16 h-16 rounded-2xl bg-[#1B89C5] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-full bg-[#1B89C5] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
                   {SERVICE_ICONS[service.id]}
                 </div>
               </div>
