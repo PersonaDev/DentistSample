@@ -59,21 +59,32 @@ export function Navbar() {
     label,
     dropdown,
   }: {
-    href: string;
+    href?: string;
     label: string;
     dropdown?: React.ReactNode;
   }) => (
     <div className="relative group">
-      <Link
-        href={href}
-        className={cn(
-          "flex items-center gap-1 px-4 py-2 font-medium transition-colors duration-200 rounded-full text-sm",
-          isActive(href) ? "text-[#1B89C5]" : "text-[#101828] hover:text-[#1B89C5]"
-        )}
-      >
-        {label}
-        {dropdown && <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />}
-      </Link>
+      {href && !dropdown ? (
+        <Link
+          href={href}
+          className={cn(
+            "flex items-center gap-1 px-4 py-2 font-medium transition-colors duration-200 rounded-full text-sm",
+            isActive(href) ? "text-[#1B89C5]" : "text-[#101828] hover:text-[#1B89C5]"
+          )}
+        >
+          {label}
+        </Link>
+      ) : (
+        <button
+          className={cn(
+            "flex items-center gap-1 px-4 py-2 font-medium transition-colors duration-200 rounded-full text-sm cursor-default",
+            dropdown && href && isActive(href) ? "text-[#1B89C5]" : "text-[#101828] hover:text-[#1B89C5]"
+          )}
+        >
+          {label}
+          {dropdown && <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />}
+        </button>
+      )}
       {dropdown && (
         <div className="absolute top-full left-0 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-2 min-w-[220px] flex flex-col gap-0.5">
@@ -110,7 +121,6 @@ export function Navbar() {
             <nav className="hidden lg:flex items-center gap-0">
               <NavItem href="/" label="Home" />
               <NavItem
-                href="/about"
                 label="About"
                 dropdown={
                   <>
@@ -121,7 +131,6 @@ export function Navbar() {
                 }
               />
               <NavItem
-                href="/resources/newpatient"
                 label="Resources"
                 dropdown={
                   <>
@@ -133,12 +142,9 @@ export function Navbar() {
               />
               <NavItem href="/specials/savingsplan" label="Specials" />
               <NavItem
-                href="/services"
                 label="Services"
                 dropdown={
                   <>
-                    <DropdownLink href="/services">All Services</DropdownLink>
-                    <div className="h-px bg-gray-100 my-1 mx-2" />
                     {SERVICES.map((s) => (
                       <DropdownLink key={s.id} href={`/services/${s.id}`}>{s.title}</DropdownLink>
                     ))}

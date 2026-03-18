@@ -16,7 +16,7 @@ const SERVICES_LIST = [
 const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Our Dentists", href: "/about/doctors" },
-  { label: "Dental Services", href: "/services" },
+  { label: "Dental Services", href: "/services/general" },
   { label: "Contact Us", href: "/contact" },
   { label: "FAQ", href: "/faq" },
   { label: "Patient Resources", href: "/resources/newpatient" },

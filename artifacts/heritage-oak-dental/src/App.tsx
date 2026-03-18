@@ -1,17 +1,15 @@
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Switch, Route, Router as WouterRouter, Redirect } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Layout } from "@/components/layout/Layout";
 import { Home } from "@/pages/Home";
-import { About } from "@/pages/About";
 import { MeetTheTeam } from "@/pages/MeetTheTeam";
 import { MeetTheDoctors } from "@/pages/MeetTheDoctors";
 import { OfficeTour } from "@/pages/OfficeTour";
 import { Reviews } from "@/pages/Reviews";
 import { Careers } from "@/pages/Careers";
-import { Services } from "@/pages/Services";
 import { ServiceDetail } from "@/pages/ServiceDetail";
 import { Contact } from "@/pages/Contact";
 import { NewPatient } from "@/pages/NewPatient";
@@ -30,16 +28,16 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
 
-        {/* About */}
-        <Route path="/about" component={About} />
+        {/* About — no landing page, redirect to first subpage */}
+        <Route path="/about">{() => <Redirect to="/about/doctors" />}</Route>
         <Route path="/about/doctors" component={MeetTheDoctors} />
         <Route path="/about/meettheteam" component={MeetTheTeam} />
         <Route path="/about/officetour" component={OfficeTour} />
         <Route path="/about/reviews" component={Reviews} />
         <Route path="/about/careers" component={Careers} />
 
-        {/* Services */}
-        <Route path="/services" component={Services} />
+        {/* Services — no landing page, redirect to first service */}
+        <Route path="/services">{() => <Redirect to="/services/general" />}</Route>
         <Route path="/services/:id" component={ServiceDetail} />
 
         {/* Resources */}
