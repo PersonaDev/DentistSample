@@ -127,130 +127,123 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Hours + Areas */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 bg-[#E8F4FA] rounded-2xl p-8">
+          {/* Office Hours — full width */}
+          <div className="bg-[#E8F4FA] rounded-2xl p-8 mb-12">
+            <div className="flex items-center gap-2 mb-6">
+              <Clock className="w-5 h-5 text-[#1B89C5]" aria-hidden="true" />
+              <h2 className="font-bold text-[#101828] text-xl">Office Hours</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              {[
+                ["Monday", "7:30AM – 6:00PM"],
+                ["Tuesday", "7:30AM – 6:00PM"],
+                ["Wednesday", "7:30AM – 6:00PM"],
+                ["Thursday", "7:30AM – 6:00PM"],
+                ["Friday", "8:00AM – 4:00PM*"],
+              ].map(([day, hrs]) => (
+                <div key={day} className="bg-white rounded-xl px-4 py-3 flex flex-col gap-1 shadow-sm">
+                  <span className="text-xs font-semibold text-[#1B89C5] uppercase tracking-wide">{day}</span>
+                  <span className="text-[#101828] font-medium text-sm">{hrs}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-gray-500 mt-4">*Administrative hours only. Saturday &amp; Sunday: Closed.</p>
+          </div>
+
+          {/* Form + Map — side by side on desktop */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+            {/* Left: Contact Form */}
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Clock className="w-5 h-5 text-[#1B89C5]" aria-hidden="true" />
-                <h3 className="font-bold text-[#101828] text-lg">Office Hours</h3>
-              </div>
-              <div className="flex flex-col gap-2 text-gray-700">
-                {[
-                  ["Monday", "7:30AM - 6:00PM"],
-                  ["Tuesday", "7:30AM - 6:00PM"],
-                  ["Wednesday", "7:30AM - 6:00PM"],
-                  ["Thursday", "7:30AM - 6:00PM"],
-                  ["Friday", "8:00AM - 4:00PM*"],
-                ].map(([day, hrs]) => (
-                  <div key={day} className="flex justify-between border-b border-gray-200 pb-2">
-                    <span className="font-medium">{day}</span>
-                    <span>{hrs}</span>
+              <h2 className="text-3xl font-bold text-[#101828] mb-6">Send Us A Message!</h2>
+              <div className="bg-white border border-gray-200 rounded-2xl p-8">
+                {isSubmitted ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-center">
+                    <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
+                      <CheckCircle2 className="w-10 h-10" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3 text-[#101828]">Message Sent!</h3>
+                    <p className="text-gray-600 mb-6">Thank you! We'll be in touch soon.</p>
+                    <Button onClick={() => setIsSubmitted(false)} variant="outline">Send Another Message</Button>
                   </div>
-                ))}
-                <p className="text-sm text-gray-500 mt-1">*Administrative hours only.</p>
+                ) : (
+                  <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+                    <div>
+                      <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-name">Full Name</label>
+                      <input
+                        id="contact-name"
+                        {...register("name")}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors"
+                        placeholder="John Doe"
+                      />
+                      {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-email">Email</label>
+                      <input
+                        id="contact-email"
+                        {...register("email")}
+                        type="email"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors"
+                        placeholder="john@example.com"
+                      />
+                      {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-phone">Phone</label>
+                      <input
+                        id="contact-phone"
+                        {...register("phone")}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors"
+                        placeholder="(916) 555-0123"
+                      />
+                      {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-message">Message</label>
+                      <textarea
+                        id="contact-message"
+                        {...register("message")}
+                        rows={4}
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors resize-none"
+                        placeholder="How can we help you?"
+                      />
+                      {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+                    </div>
+                    <div>
+                      <Button type="submit" size="lg" className="gap-2 w-full" disabled={isSubmitting}>
+                        {isSubmitting ? "Sending..." : "Send Message"} <Send className="w-4 h-4" />
+                      </Button>
+                    </div>
+                  </form>
+                )}
               </div>
             </div>
+
+            {/* Right: Map */}
             <div>
-              <h3 className="font-bold text-[#101828] text-lg mb-4">Areas We Serve</h3>
-              <p className="text-gray-700">
-                Rocklin • Roseville • Granite Bay • Lincoln • Loomis • Auburn • Folsom • Citrus Heights • Elk Grove • Sacramento
-              </p>
-              <p className="text-gray-500 text-sm mt-4">
-                Conveniently located near I-80 and Highway 65, easily accessible from all of Placer County and the greater Sacramento metro area.
-              </p>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <h2 className="text-3xl font-bold text-[#101828] mb-8">Send Us A Message!</h2>
-
-          <div className="bg-white border border-gray-200 rounded-2xl p-8 mb-16">
-            {isSubmitted ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center">
-                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
-                  <CheckCircle2 className="w-10 h-10" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-[#101828]">Message Sent!</h3>
-                <p className="text-gray-600 mb-6">Thank you! We'll be in touch soon.</p>
-                <Button onClick={() => setIsSubmitted(false)} variant="outline">Send Another Message</Button>
+              <h2 className="text-3xl font-bold text-[#101828] mb-6">Find Us in Rocklin, CA</h2>
+              <a
+                href="https://www.google.com/maps/dir//Heritage+Oak+Dental,+3700+Atherton+Rd,+Rocklin,+CA+95765"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block text-[#1B89C5] hover:underline font-semibold mb-4"
+              >
+                Get Directions to Heritage Oak Dental →
+              </a>
+              <div className="rounded-2xl overflow-hidden border border-gray-200" style={{ height: "480px" }}>
+                <iframe
+                  src="https://maps.google.com/maps?q=Heritage+Oak+Dental,+3700+Atherton+Rd,+Rocklin,+CA+95765&output=embed"
+                  title="Heritage Oak Dental location map — 3700 Atherton Rd, Rocklin, CA 95765"
+                  className="w-full h-full"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-name">Full Name</label>
-                  <input
-                    id="contact-name"
-                    {...register("name")}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors"
-                    placeholder="John Doe"
-                  />
-                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-email">Email</label>
-                  <input
-                    id="contact-email"
-                    {...register("email")}
-                    type="email"
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors"
-                    placeholder="john@example.com"
-                  />
-                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-phone">Phone</label>
-                  <input
-                    id="contact-phone"
-                    {...register("phone")}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors"
-                    placeholder="(916) 555-0123"
-                  />
-                  {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-[#101828] mb-2" htmlFor="contact-message">Message</label>
-                  <input
-                    id="contact-message"
-                    {...register("message")}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-[#1B89C5] focus:outline-none transition-colors"
-                    placeholder="How can we help you?"
-                  />
-                  {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
-                </div>
-                <div className="md:col-span-2">
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="gap-2"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"} <Send className="w-4 h-4" />
-                  </Button>
-                </div>
-              </form>
-            )}
-          </div>
+            </div>
 
-          {/* Map */}
-          <h2 className="text-3xl font-bold text-[#101828] mb-6">Find Heritage Oak Dental in Rocklin, CA</h2>
-          <a
-            href="https://www.google.com/maps/dir//Heritage+Oak+Dental,+3700+Atherton+Rd,+Rocklin,+CA+95765"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block text-[#1B89C5] hover:underline font-semibold mb-6"
-          >
-            Get Directions to Heritage Oak Dental →
-          </a>
-          <div className="rounded-2xl overflow-hidden border border-gray-200 h-96">
-            <iframe
-              src="https://maps.google.com/maps?q=Heritage+Oak+Dental,+3700+Atherton+Rd,+Rocklin,+CA+95765&output=embed"
-              title="Heritage Oak Dental location map — 3700 Atherton Rd, Rocklin, CA 95765"
-              className="w-full h-full"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
           </div>
         </div>
       </div>
