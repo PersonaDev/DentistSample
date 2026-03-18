@@ -47,11 +47,10 @@ export function Home() {
                 <Star className="w-4 h-4 fill-primary" /> Top Rated Dentist in
                 Rocklin
               </div>
-              <h1 className="md:text-5xl lg:text-6xl font-bold mb-6 text-foreground text-balance text-[45px]">
-                Your Trusted Dentist in Rocklin, CA -{" "}
-                <span className="text-primary">
-                  Welcome to Heritage Oak Dental
-                </span>
+              <h1 className="font-bold mb-6 text-foreground leading-tight">
+                <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mb-1">Your Trusted Dentist in Rocklin, CA</span>
+                <span className="block text-[36px] sm:text-5xl lg:text-[52px] text-foreground">Welcome to</span>
+                <span className="block text-[36px] sm:text-5xl lg:text-[52px] text-primary">Heritage Oak Dental</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">We are privileged and proud to provide comprehensive dental care and to serve our local community in Rocklin, Roseville, Lincoln, Loomis, and Granite Bay. We strive to develop long-lasting, trusting relationships with our neighbors in the Sacramento, Placer, and El Dorado counties. We recognize that every patient has different needs, and we pride ourselves in the courteous service we deliver to each person who walks through our doors. Whether it's time for a new, beautiful and healthy smile or time to care for the one you have, Heritage Oak Dental is ready to make you our top priority.</p>
 
