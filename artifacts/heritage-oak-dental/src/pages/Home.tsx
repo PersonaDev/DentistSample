@@ -47,7 +47,7 @@ export function Home() {
                 <Star className="w-4 h-4 fill-primary" /> Top Rated Dentist in
                 Rocklin
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-foreground text-balance">
+              <h1 className="md:text-5xl lg:text-6xl font-bold mb-6 text-foreground text-balance text-[45px]">
                 Your Trusted Dentist in Rocklin, CA -{" "}
                 <span className="text-primary">
                   Welcome to Heritage Oak Dental
