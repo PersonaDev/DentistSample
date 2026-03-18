@@ -4,6 +4,7 @@ import {
   Star,
   Clock,
   MapPin,
+  Mail,
   Calendar,
   Phone,
   Sparkles,
@@ -211,49 +212,45 @@ export function Home() {
       {/* LOCATION & HOURS */}
       <section className="py-24 bg-muted relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Hours Card */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-border/50">
-              <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                <div className="p-3 bg-primary/10 rounded-xl">
-                  <Clock className="w-6 h-6 text-primary" />
+
+          {/* Hours — full width */}
+          <div className="bg-white rounded-3xl p-8 shadow-xl border border-border/50 mb-12">
+            <h2 className="text-2xl font-bold mb-8 flex items-center gap-3">
+              <div className="p-3 bg-primary/10 rounded-xl">
+                <Clock className="w-6 h-6 text-primary" />
+              </div>
+              Dental Office Hours in Rocklin
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                { day: "Monday", hours: "7:30AM – 6:00PM" },
+                { day: "Tuesday", hours: "7:30AM – 6:00PM" },
+                { day: "Wednesday", hours: "7:30AM – 6:00PM" },
+                { day: "Thursday", hours: "7:30AM – 6:00PM" },
+                { day: "Friday", hours: "8:00AM – 4:00PM*", muted: true },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col gap-1 border border-border/50 rounded-xl px-4 py-3 bg-muted/40">
+                  <span className="text-xs font-semibold text-primary uppercase tracking-wide">{item.day}</span>
+                  <span className={`text-sm font-medium ${item.muted ? "text-muted-foreground" : "text-foreground"}`}>{item.hours}</span>
                 </div>
-                Dental Office Hours in Rocklin
-              </h2>
-
-              <div className="space-y-4">
-                {[
-                  { day: "Monday", hours: "7:30AM – 6:00PM" },
-                  { day: "Tuesday", hours: "7:30AM – 6:00PM" },
-                  { day: "Wednesday", hours: "7:30AM – 6:00PM" },
-                  { day: "Thursday", hours: "7:30AM – 6:00PM" },
-                  { day: "Friday", hours: "8:00AM – 4:00PM*", muted: true },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className={`flex justify-between items-center py-3 border-b border-border/50 last:border-0 ${item.muted ? "text-muted-foreground" : "text-foreground font-medium"}`}
-                  >
-                    <span>{item.day}</span>
-                    <span>{item.hours}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mt-6 italic">
-                *Administrative hours only.
-              </p>
-
-              <div className="mt-8 pt-8 border-t border-border/50 flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="flex-1">
-                  <Button className="w-full gap-2">
-                    <Calendar className="w-5 h-5" /> Schedule an Appointment
-                  </Button>
-                </Link>
-              </div>
+              ))}
             </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-6 pt-6 border-t border-border/50 gap-4">
+              <p className="text-sm text-muted-foreground italic">*Administrative hours only. Saturday &amp; Sunday: Closed.</p>
+              <Link href="/contact">
+                <Button className="gap-2 whitespace-nowrap">
+                  <Calendar className="w-5 h-5" /> Schedule an Appointment
+                </Button>
+              </Link>
+            </div>
+          </div>
 
-            {/* Location Info */}
+          {/* Contact info (left) + Map (right) */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+            {/* Left: Contact Info */}
             <div>
-              <h2 className="text-3xl font-bold mb-6">
+              <h2 className="text-3xl font-bold mb-4">
                 Visit Our Rocklin Dental Office
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
@@ -261,19 +258,16 @@ export function Home() {
                 from Roseville, Granite Bay, Lincoln, and surrounding
                 communities. We look forward to welcoming you!
               </p>
-
-              <div className="space-y-6 mb-8">
+              <div className="space-y-5 mb-8">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shadow-sm border border-border">
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Address</h4>
-                    <p className="text-muted-foreground text-lg">
-                      3700 Atherton Rd
-                      <br />
-                      Rocklin, CA 95765
-                    </p>
+                    <address className="text-muted-foreground text-lg not-italic">
+                      3700 Atherton Rd<br />Rocklin, CA 95765
+                    </address>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -282,31 +276,22 @@ export function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Phone</h4>
-                    <a
-                      href="tel:9166264050"
-                      className="text-primary hover:underline text-lg"
-                    >
-                      (916) 626-4050
-                    </a>
+                    <a href="tel:9166264050" className="text-primary hover:underline text-lg">(916) 626-4050</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white rounded-xl shadow-sm border border-border">
-                    <MapPin className="w-6 h-6 text-primary" />
+                    <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Email</h4>
-                    <a
-                      href="mailto:contactus@heritageoakdental.com"
-                      className="text-primary hover:underline text-lg"
-                    >
+                    <a href="mailto:contactus@heritageoakdental.com" className="text-primary hover:underline text-lg">
                       contactus@heritageoakdental.com
                     </a>
                   </div>
                 </div>
               </div>
-
-              <div className="flex flex-wrap gap-4 mb-8">
+              <div className="flex flex-wrap gap-4">
                 <Link href="/contact">
                   <Button>Schedule an Appointment</Button>
                 </Link>
@@ -318,18 +303,21 @@ export function Home() {
                   <Button variant="outline">Get Directions</Button>
                 </a>
               </div>
-
-              <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-video bg-gray-200 relative">
-                <iframe
-                  src="https://maps.google.com/maps?q=Heritage+Oak+Dental,+3700+Atherton+Rd,+Rocklin,+CA+95765&output=embed"
-                  className="absolute inset-0 w-full h-full"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
             </div>
+
+            {/* Right: Map */}
+            <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-white aspect-video bg-gray-200 relative">
+              <iframe
+                src="https://maps.google.com/maps?q=Heritage+Oak+Dental,+3700+Atherton+Rd,+Rocklin,+CA+95765&output=embed"
+                title="Heritage Oak Dental location — 3700 Atherton Rd, Rocklin, CA"
+                className="absolute inset-0 w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+
           </div>
         </div>
       </section>
