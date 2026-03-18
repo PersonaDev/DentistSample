@@ -1,8 +1,17 @@
+import { SEOHead } from "@/components/SEOHead";
+
 export function PreTreatment() {
   return (
+    <>
+      <SEOHead
+        title="Pre-Treatment Instructions | Heritage Oak Dental Rocklin"
+        description="Pre-treatment instructions from Heritage Oak Dental in Rocklin, CA. Prepare for your dental procedure with guidance from our experienced team. Call (916) 626-4050."
+        keywords="pre treatment dental instructions Rocklin, before dental procedure Rocklin, Heritage Oak Dental instructions"
+        canonicalPath="/resources/pretreatment"
+      />
     <div>
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-5xl font-bold text-[#101828] mb-4">Pre Treatment Instructions</h1>
+        <h1 className="text-5xl font-bold text-[#101828] mb-4">Pre-Treatment Instructions</h1>
         <p className="text-xl text-gray-600">
           Preparing for your dental procedure helps ensure the best outcome
         </p>
@@ -96,5 +105,6 @@ export function PreTreatment() {
         </div>
       </div>
     </div>
+    </>
   );
 }

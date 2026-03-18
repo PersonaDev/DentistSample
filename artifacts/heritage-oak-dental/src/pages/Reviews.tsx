@@ -1,3 +1,5 @@
+import { SEOHead } from "@/components/SEOHead";
+
 const REVIEWS = [
   {
     text: "The office is always very clean and the staff is great. Dr. Douglas is wonderful. Very kind, trustworthy and patient.",
@@ -82,6 +84,12 @@ function Stars() {
 export function Reviews() {
   return (
     <div>
+      <SEOHead
+        title="Patient Reviews | Heritage Oak Dental Rocklin, CA"
+        description="Read patient reviews for Heritage Oak Dental in Rocklin, CA. See why families throughout Rocklin, Roseville, Granite Bay, Loomis & Sacramento choose us for their dental care."
+        keywords="Heritage Oak Dental reviews, dentist reviews Rocklin CA, dental office reviews Rocklin, patient testimonials Rocklin dentist"
+        canonicalPath="/about/reviews"
+      />
       {/* Hero */}
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
         <h1 className="text-5xl font-bold text-[#101828] mb-4">Reviews</h1>

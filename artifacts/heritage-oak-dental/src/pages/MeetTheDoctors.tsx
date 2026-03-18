@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 function Accordion({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -23,10 +24,17 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
 
 export function MeetTheDoctors() {
   return (
-    <div>
+    <>
+      <SEOHead
+        title="Meet Our Dentists | Heritage Oak Dental Rocklin, CA"
+        description="Meet Dr. Shane Douglas and Dr. Ben Kloss — experienced dentists at Heritage Oak Dental in Rocklin, CA. Serving Rocklin, Roseville, Granite Bay, Loomis & Sacramento with personalized, expert dental care."
+        keywords="Dr Shane Douglas dentist Rocklin, Dr Ben Kloss dentist Rocklin, Heritage Oak Dental doctors, dentist Rocklin CA"
+        canonicalPath="/about/doctors"
+      />
+      <div>
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-5xl font-bold text-[#101828] mb-4">Meet Our Dentists</h1>
-        <p className="text-xl text-gray-600">Experienced, caring dental professionals serving Rocklin, CA</p>
+        <h1 className="text-5xl font-bold text-[#101828] mb-4">Meet Our Rocklin Dentists</h1>
+        <p className="text-xl text-gray-600">Experienced, caring dental professionals serving Rocklin, Roseville, Granite Bay & Sacramento</p>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
@@ -130,5 +138,6 @@ export function MeetTheDoctors() {
 
       </div>
     </div>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
 
 function Accordion({ title, children }: { title: string; children: React.ReactNode }) {
   const [open, setOpen] = useState(false);
@@ -45,6 +46,13 @@ const PLACEHOLDER = (
 
 export function PostTreatment() {
   return (
+    <>
+      <SEOHead
+        title="Post-Treatment Instructions | Heritage Oak Dental Rocklin"
+        description="Post-treatment care instructions from Heritage Oak Dental in Rocklin, CA. Follow our guidelines after dental procedures for optimal healing. Call (916) 626-4050 with any questions."
+        keywords="post treatment dental instructions Rocklin, after dental procedure care Rocklin, Heritage Oak Dental aftercare"
+        canonicalPath="/resources/posttreatment"
+      />
     <div>
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-[#101828] mb-4">Post-Treatment Instructions</h1>
@@ -188,5 +196,6 @@ export function PostTreatment() {
         </div>
       </div>
     </div>
+    </>
   );
 }

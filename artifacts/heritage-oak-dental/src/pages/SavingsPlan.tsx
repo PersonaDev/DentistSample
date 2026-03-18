@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { SEOHead } from "@/components/SEOHead";
 
 const BENEFITS = [
   { label: "2 Exams", full: false },
@@ -19,6 +20,12 @@ export function SavingsPlan() {
 
   return (
     <div>
+      <SEOHead
+        title="Dental Savings Plan Rocklin, CA | Heritage Oak Dental"
+        description="Heritage Oak Dental's in-house savings plan in Rocklin, CA — an affordable alternative to dental insurance. Includes exams, cleanings, x-rays & 15% off services. Call (916) 626-4050."
+        keywords="dental savings plan Rocklin CA, no insurance dental Rocklin, dental discount plan Rocklin, Heritage Oak Dental smile club"
+        canonicalPath="/specials/savingsplan"
+      />
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
         <h1 className="text-5xl font-bold text-[#101828] mb-4">Heritage Oak Dental Savings Plan</h1>
         <p className="text-xl text-gray-600">A simple, affordable alternative to dental insurance</p>

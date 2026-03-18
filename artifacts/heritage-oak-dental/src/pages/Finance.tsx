@@ -1,3 +1,5 @@
+import { SEOHead } from "@/components/SEOHead";
+
 const NETWORKS = [
   "Active Duty Dental Program United Concordia Tricare",
   "Ameriben Solutions",
@@ -28,9 +30,16 @@ const SMILE_CLUB_BENEFITS = [
 
 export function Finance() {
   return (
+    <>
+      <SEOHead
+        title="Dental Financing & Insurance | Heritage Oak Dental Rocklin"
+        description="Flexible dental financing and insurance options at Heritage Oak Dental in Rocklin, CA. We accept most PPO plans, CareCredit financing, and offer our Heritage Oak Dental Savings Plan. Call (916) 626-4050."
+        keywords="dental financing Rocklin CA, dental insurance Rocklin, CareCredit dental Rocklin, dental payment plans Rocklin, Heritage Oak Dental insurance"
+        canonicalPath="/resources/finance"
+      />
     <div>
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-5xl font-bold text-[#101828] mb-4">Finance</h1>
+        <h1 className="text-5xl font-bold text-[#101828] mb-4">Dental Financing & Insurance</h1>
         <p className="text-xl text-gray-600">Convenient payment options to help you get the care you need</p>
       </div>
 
@@ -123,5 +132,6 @@ export function Finance() {
         </section>
       </div>
     </div>
+    </>
   );
 }

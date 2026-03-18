@@ -1,10 +1,18 @@
+import { SEOHead } from "@/components/SEOHead";
+
 const IMG = (hash: string) => `${import.meta.env.BASE_URL}images/${hash}`;
 
 export function OfficeTour() {
   return (
     <div>
+      <SEOHead
+        title="Dental Office Tour | Heritage Oak Dental Rocklin, CA"
+        description="Take a virtual tour of Heritage Oak Dental in Rocklin, CA. See our modern treatment rooms, welcoming waiting area, kids' play area & state-of-the-art dental technology. Serving Rocklin, Roseville & Granite Bay."
+        keywords="Heritage Oak Dental office tour, dental office Rocklin CA, modern dental office Rocklin, dental facility Rocklin"
+        canonicalPath="/about/officetour"
+      />
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-5xl font-bold text-[#101828] mb-4">Office Tour</h1>
+        <h1 className="text-5xl font-bold text-[#101828] mb-4">Tour Our Modern Rocklin Dental Office</h1>
         <p className="text-xl text-gray-600">
           Take a look at our modern, state-of-the-art dental facility designed for your comfort and care.
         </p>

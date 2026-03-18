@@ -1,8 +1,16 @@
+import { SEOHead } from "@/components/SEOHead";
+
 export function Careers() {
   return (
     <div>
+      <SEOHead
+        title="Dental Careers in Rocklin, CA | Heritage Oak Dental"
+        description="Join the Heritage Oak Dental team in Rocklin, CA. We are looking for passionate dental professionals to serve patients in Rocklin, Roseville, Granite Bay & Sacramento. Apply today!"
+        keywords="dental jobs Rocklin CA, dental careers Rocklin, dentist jobs Rocklin, dental hygienist jobs Rocklin, Heritage Oak Dental careers"
+        canonicalPath="/about/careers"
+      />
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-5xl font-bold text-[#101828] mb-3">Career Opportunities</h1>
+        <h1 className="text-5xl font-bold text-[#101828] mb-3">Career Opportunities at Heritage Oak Dental</h1>
         <p className="text-xl text-gray-600">Join our amazing dental team at Heritage Oak Dental</p>
       </div>
 

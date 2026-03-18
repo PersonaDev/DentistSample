@@ -2,6 +2,21 @@ import React, { useState } from "react";
 import { useParams, Link } from "wouter";
 import { ChevronDown } from "lucide-react";
 import { SERVICES, Block, PageSection } from "@/lib/data";
+import { SEOHead } from "@/components/SEOHead";
+
+const SITE_URL = "https://www.heritageoakdental.com";
+
+const SERVICE_SEO: Record<string, { title: string; description: string; keywords: string }> = {
+  general:      { title: "General Dentistry in Rocklin, CA", description: "Professional general dentistry at Heritage Oak Dental in Rocklin, CA — teeth cleanings, exams, fillings, crowns & more. Serving Rocklin, Roseville, Granite Bay & Loomis. Call (916) 626-4050.", keywords: "general dentistry Rocklin CA, teeth cleaning Rocklin, dental exam Rocklin, dental fillings Rocklin, family dentist Rocklin" },
+  cosmetic:     { title: "Cosmetic Dentistry in Rocklin, CA", description: "Transform your smile with cosmetic dentistry at Heritage Oak Dental in Rocklin, CA. Teeth whitening, veneers, bonding & smile makeovers. Serving Rocklin, Roseville, Granite Bay & Sacramento.", keywords: "cosmetic dentistry Rocklin CA, teeth whitening Rocklin, porcelain veneers Rocklin, smile makeover Rocklin" },
+  implant:      { title: "Dental Implants in Rocklin, CA", description: "Restore missing teeth with dental implants at Heritage Oak Dental in Rocklin, CA. Permanent, natural-looking results. Serving Rocklin, Roseville, Granite Bay & Loomis. Call (916) 626-4050.", keywords: "dental implants Rocklin CA, tooth implant Rocklin, implant dentist Rocklin, missing teeth Rocklin" },
+  orthodontics: { title: "Orthodontics & Invisalign in Rocklin, CA", description: "Straighten your smile with braces or Invisalign at Heritage Oak Dental in Rocklin, CA. Orthodontic care for teens and adults. Serving Rocklin, Roseville, Granite Bay & Sacramento.", keywords: "orthodontics Rocklin CA, Invisalign Rocklin, braces Rocklin, clear aligners Rocklin, teeth straightening Rocklin" },
+  pediatric:    { title: "Pediatric Dentistry in Rocklin, CA", description: "Gentle, fun dental care for kids at Heritage Oak Dental in Rocklin, CA. Our child-friendly team makes every visit positive. Serving families in Rocklin, Roseville, Granite Bay & Loomis.", keywords: "pediatric dentistry Rocklin CA, kids dentist Rocklin, children's dentist Rocklin, baby teeth Rocklin" },
+  oral:         { title: "Oral Surgery in Rocklin, CA", description: "Expert oral surgery including tooth extractions and wisdom teeth removal at Heritage Oak Dental in Rocklin, CA. Serving Rocklin, Roseville, Granite Bay & Sacramento. Call (916) 626-4050.", keywords: "oral surgery Rocklin CA, tooth extraction Rocklin, wisdom teeth removal Rocklin, oral surgeon Rocklin" },
+  restorative:  { title: "Restorative Dentistry in Rocklin, CA", description: "Rebuild your smile with restorative dentistry at Heritage Oak Dental in Rocklin, CA. Crowns, bridges, dentures & more. Serving Rocklin, Roseville, Granite Bay & Sacramento.", keywords: "restorative dentistry Rocklin CA, dental crowns Rocklin, dental bridges Rocklin, dentures Rocklin" },
+  sedation:     { title: "Sedation Dentistry in Rocklin, CA", description: "Anxiety-free dental care with sedation dentistry at Heritage Oak Dental in Rocklin, CA. Nitrous oxide, oral sedation & IV sedation available. Serving Rocklin, Roseville, Granite Bay & Loomis.", keywords: "sedation dentistry Rocklin CA, dental anxiety Rocklin, IV sedation Rocklin, laughing gas Rocklin" },
+  periodontics: { title: "Periodontics & Gum Disease Treatment Rocklin", description: "Protect your gums with periodontic care at Heritage Oak Dental in Rocklin, CA. Scaling, root planing & gum disease treatment. Serving Rocklin, Roseville, Granite Bay & Sacramento.", keywords: "periodontics Rocklin CA, gum disease treatment Rocklin, scaling root planing Rocklin, periodontist Rocklin" },
+};
 
 function renderBlock(block: Block, idx: number): React.ReactElement {
   if (typeof block === "string") {
@@ -80,6 +95,7 @@ function AccordionItem({ title, content }: { title: string; content: string }) {
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex justify-between items-center px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
+        aria-expanded={open}
       >
         <span className="font-semibold text-[#101828]">{title}</span>
         <ChevronDown
@@ -109,6 +125,49 @@ export function ServiceDetail() {
       </div>
     );
   }
+
+  const seo = SERVICE_SEO[service.id] ?? {
+    title: `${service.title} in Rocklin, CA`,
+    description: `${service.subtitle} Heritage Oak Dental in Rocklin, CA serves patients from Rocklin, Roseville, Granite Bay & Sacramento. Call (916) 626-4050.`,
+    keywords: `${service.title} Rocklin CA, dentist Rocklin`,
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: seo.title,
+    description: seo.description,
+    provider: {
+      "@type": "Dentist",
+      name: "Heritage Oak Dental",
+      telephone: "+1-916-626-4050",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "3700 Atherton Rd",
+        addressLocality: "Rocklin",
+        addressRegion: "CA",
+        postalCode: "95765",
+        addressCountry: "US",
+      },
+    },
+    areaServed: [
+      { "@type": "City", name: "Rocklin" },
+      { "@type": "City", name: "Roseville" },
+      { "@type": "City", name: "Granite Bay" },
+      { "@type": "City", name: "Loomis" },
+      { "@type": "City", name: "Sacramento" },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+      { "@type": "ListItem", position: 3, name: service.title },
+    ],
+  };
 
   const relatedServices = service.relatedIds
     .map(rid => SERVICES.find(s => s.id === rid))
@@ -141,101 +200,112 @@ export function ServiceDetail() {
   }[service.id] ?? "Call us at (916) 626-4050 or request an appointment online.";
 
   return (
-    <div className="bg-[#F8FAFC]">
-      {/* Breadcrumb */}
-      <div className="bg-white border-b border-gray-100 py-3 px-4">
-        <div className="max-w-4xl mx-auto flex items-center gap-2 text-sm text-gray-500">
-          <Link href="/" className="hover:text-[#1B89C5] transition-colors">Home</Link>
-          <span>/</span>
-          <Link href="/services" className="hover:text-[#1B89C5] transition-colors">Services</Link>
-          <span>/</span>
-          <span className="text-[#101828] font-medium">{service.title}</span>
-        </div>
-      </div>
+    <>
+      <SEOHead
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        canonicalPath={`/services/${service.id}`}
+        schema={[serviceSchema, breadcrumbSchema]}
+      />
 
-      {/* Hero */}
-      <div className="bg-gradient-to-b from-[#E8F4FA] to-[#F8FAFC] pt-12 pb-14 text-center px-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#101828] mb-4">
-          {service.title} in Rocklin, CA
-        </h1>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">{service.subtitle}</p>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-
-        {/* Intro card — plain white, no colored border */}
-        <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6 shadow-sm">
-          {service.intro.split("\n\n").map((para, i) => (
-            <p key={i} className="text-gray-700 leading-relaxed mb-3 last:mb-0">{para}</p>
-          ))}
-        </div>
-
-        {/* Rich Section Cards (new format) */}
-        {hasPageSections && service.pageSections!.map((section, i) => (
-          <SectionCard key={i} section={section} />
-        ))}
-
-        {/* Accordion Procedures (legacy format — cosmetic, restorative, periodontics) */}
-        {!hasPageSections && service.procedures.length > 0 && (
-          <section className="mb-6">
-            <h2 className="text-2xl font-bold text-[#101828] mb-6">Procedures We Offer</h2>
-            {service.procedures.map(proc => (
-              <AccordionItem key={proc.title} title={proc.title} content={proc.content} />
-            ))}
-          </section>
-        )}
-
-        {/* Why Choose Heritage Oak Dental — only for accordion-format pages */}
-        {!hasPageSections && (
-          <section className="mb-6 bg-[#E8F4FA] rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-[#101828] mb-4">Why Choose Heritage Oak Dental?</h2>
-            <p className="text-gray-700 leading-relaxed">{service.whyUs}</p>
-          </section>
-        )}
-
-        {/* CTA */}
-        <div className="bg-[#1B89C5] rounded-2xl p-10 text-center text-white mb-8">
-          <h2 className="text-2xl font-bold mb-3">{ctaTitle}</h2>
-          <p className="text-blue-100 mb-6 max-w-xl mx-auto">{ctaBody}</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href="tel:9166264050"
-              className="inline-block bg-white text-[#1B89C5] font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors"
-            >
-              Call Us (916) 626-4050
-            </a>
-            <Link
-              href="/contact"
-              className="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-colors"
-            >
-              Contact Us Online
-            </Link>
+      <div className="bg-[#F8FAFC]">
+        {/* Breadcrumb */}
+        <nav aria-label="Breadcrumb" className="bg-white border-b border-gray-100 py-3 px-4">
+          <div className="max-w-4xl mx-auto flex items-center gap-2 text-sm text-gray-500">
+            <Link href="/" className="hover:text-[#1B89C5] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href="/services" className="hover:text-[#1B89C5] transition-colors">Services</Link>
+            <span>/</span>
+            <span className="text-[#101828] font-medium">{service.title}</span>
           </div>
+        </nav>
+
+        {/* Hero */}
+        <div className="bg-gradient-to-b from-[#E8F4FA] to-[#F8FAFC] pt-12 pb-14 text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#101828] mb-4">
+            {service.title} in Rocklin, CA
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">{service.subtitle}</p>
         </div>
 
-        {/* Related Services */}
-        {relatedServices.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold text-[#101828] mb-6">Related Services</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {relatedServices.map(rel => (
-                <Link
-                  key={rel.id}
-                  href={`/services/${rel.id}`}
-                  className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#1B89C5] hover:shadow-sm transition-all group"
-                >
-                  <h3 className="font-bold text-[#101828] mb-2 group-hover:text-[#1B89C5] transition-colors">
-                    {rel.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-3">{rel.description}</p>
-                  <span className="text-[#1B89C5] text-sm font-semibold">Learn More →</span>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
 
+          {/* Intro card */}
+          <div className="bg-white border border-gray-200 rounded-xl p-8 mb-6 shadow-sm">
+            {service.intro.split("\n\n").map((para, i) => (
+              <p key={i} className="text-gray-700 leading-relaxed mb-3 last:mb-0">{para}</p>
+            ))}
+          </div>
+
+          {/* Rich Section Cards */}
+          {hasPageSections && service.pageSections!.map((section, i) => (
+            <SectionCard key={i} section={section} />
+          ))}
+
+          {/* Accordion Procedures */}
+          {!hasPageSections && service.procedures.length > 0 && (
+            <section className="mb-6">
+              <h2 className="text-2xl font-bold text-[#101828] mb-6">Procedures We Offer</h2>
+              {service.procedures.map(proc => (
+                <AccordionItem key={proc.title} title={proc.title} content={proc.content} />
+              ))}
+            </section>
+          )}
+
+          {/* Why Choose Heritage Oak Dental */}
+          {!hasPageSections && (
+            <section className="mb-6 bg-[#E8F4FA] rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-[#101828] mb-4">Why Choose Heritage Oak Dental in Rocklin?</h2>
+              <p className="text-gray-700 leading-relaxed">{service.whyUs}</p>
+            </section>
+          )}
+
+          {/* CTA */}
+          <div className="bg-[#1B89C5] rounded-2xl p-10 text-center text-white mb-8">
+            <h2 className="text-2xl font-bold mb-3">{ctaTitle}</h2>
+            <p className="text-blue-100 mb-6 max-w-xl mx-auto">{ctaBody}</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="tel:9166264050"
+                className="inline-block bg-white text-[#1B89C5] font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors"
+              >
+                Call (916) 626-4050
+              </a>
+              <Link
+                href="/contact"
+                className="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white/10 transition-colors"
+              >
+                Request an Appointment
+              </Link>
+            </div>
+          </div>
+
+          {/* Related Services */}
+          {relatedServices.length > 0 && (
+            <section>
+              <h2 className="text-2xl font-bold text-[#101828] mb-6">Related Dental Services in Rocklin</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {relatedServices.map(rel => (
+                  <Link
+                    key={rel.id}
+                    href={`/services/${rel.id}`}
+                    className="bg-white border border-gray-200 rounded-xl p-6 hover:border-[#1B89C5] hover:shadow-sm transition-all group"
+                    aria-label={`Learn about ${rel.title} at Heritage Oak Dental`}
+                  >
+                    <h3 className="font-bold text-[#101828] mb-2 group-hover:text-[#1B89C5] transition-colors">
+                      {rel.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-3">{rel.description}</p>
+                    <span className="text-[#1B89C5] text-sm font-semibold">Learn More →</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+        </div>
       </div>
-    </div>
+    </>
   );
 }

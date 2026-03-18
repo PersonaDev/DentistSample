@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { SEOHead } from "@/components/SEOHead";
 
 const FAQS = [
   {
@@ -52,13 +53,35 @@ const FAQS = [
   },
   {
     q: "Where is Heritage Oak Dental located?",
-    a: "We are located at 3700 Atherton Rd, Rocklin, CA 95765. We are conveniently situated to serve patients from Rocklin, Roseville, Granite Bay, Lincoln, Loomis, Auburn, Citrus Heights, and Sacramento.",
+    a: "We are located at 3700 Atherton Rd, Rocklin, CA 95765. We are conveniently situated to serve patients from Rocklin, Roseville, Granite Bay, Lincoln, Loomis, Auburn, Citrus Heights, Folsom, and Sacramento.",
   },
   {
     q: "What makes Heritage Oak Dental different from other dentists in Rocklin?",
     a: "Heritage Oak Dental combines state-of-the-art technology with genuine, personalized care. Our dentists take time to listen to your concerns, explain treatment options clearly, and ensure you feel comfortable every step of the way. Our beautiful, modern facility and friendly team make every visit a positive experience.",
   },
 ];
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(faq => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.heritageoakdental.com/" },
+    { "@type": "ListItem", position: 2, name: "FAQ" },
+  ],
+};
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -67,11 +90,13 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       <button
         onClick={() => setOpen(!open)}
         className="w-full text-left py-5 flex justify-between items-center gap-4 group"
+        aria-expanded={open}
       >
         <h2 className="text-lg font-semibold text-[#101828] group-hover:text-[#1B89C5] transition-colors">{q}</h2>
         <svg
           className={`w-5 h-5 text-[#1B89C5] flex-shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
           fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
@@ -87,61 +112,73 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export function FAQ() {
   return (
-    <div>
-      <div className="bg-[#E8F4FA] py-16 text-center px-4">
-        <h1 className="text-4xl font-bold text-[#101828] mb-4">
-          Frequently Asked Questions About Our Rocklin Dental Office
-        </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Find answers to common questions about Heritage Oak Dental, your trusted dentist in Rocklin, CA. From dental services and insurance to appointments and office hours, we've got you covered. Proudly serving families in Rocklin, Roseville, Granite Bay, and Lincoln.
-        </p>
-      </div>
+    <>
+      <SEOHead
+        title="Dental FAQ | Heritage Oak Dental Rocklin, CA"
+        description="Frequently asked questions about Heritage Oak Dental in Rocklin, CA — services, insurance, hours, appointments & more. Serving Rocklin, Roseville, Granite Bay, Loomis & Sacramento. Call (916) 626-4050."
+        keywords="dental FAQ Rocklin CA, dentist questions Rocklin, Heritage Oak Dental FAQ, dental insurance Rocklin, dentist hours Rocklin"
+        canonicalPath="/faq"
+        schema={[FAQ_SCHEMA, BREADCRUMB_SCHEMA]}
+      />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="mb-12">
-          {FAQS.map((faq) => (
-            <FAQItem key={faq.q} q={faq.q} a={faq.a} />
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="bg-[#E8F4FA] rounded-2xl p-10 text-center mb-14">
-          <h2 className="text-2xl font-bold text-[#101828] mb-4">Still Have Questions? Contact Our Rocklin Dental Office</h2>
-          <p className="text-gray-600 mb-6">
-            Our friendly team at Heritage Oak Dental is here to help. Whether you need to schedule an appointment or have questions about your dental care, don't hesitate to reach out.
+      <div>
+        <div className="bg-[#E8F4FA] py-16 text-center px-4">
+          <h1 className="text-4xl font-bold text-[#101828] mb-4">
+            Frequently Asked Questions — Rocklin, CA Dentist
+          </h1>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Find answers to common questions about Heritage Oak Dental, your trusted dentist in Rocklin, CA. From dental services and insurance to appointments and office hours, we've got you covered. Proudly serving families in Rocklin, Roseville, Granite Bay, Loomis, Folsom, and Lincoln.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="tel:9166264050" className="inline-block bg-[#1B89C5] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#1578ad] transition-colors">
-              Call (916) 626-4050
-            </a>
-            <Link href="/contact" className="inline-block border-2 border-[#1B89C5] text-[#1B89C5] font-semibold px-8 py-3 rounded-full hover:bg-[#E8F4FA] transition-colors">
-              Visit Our Office
-            </Link>
-          </div>
-          <p className="text-gray-500 text-sm mt-6">Heritage Oak Dental • 3700 Atherton Rd, Rocklin, CA 95765 • (916) 626-4050</p>
         </div>
 
-        {/* Services Grid */}
-        <h2 className="text-2xl font-bold text-[#101828] mb-6">Explore Our Dental Services in Rocklin, CA</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { label: "General Dentistry", id: "general" },
-            { label: "Cosmetic Dentistry", id: "cosmetic" },
-            { label: "Dental Implants", id: "implant" },
-            { label: "Orthodontics", id: "orthodontics" },
-            { label: "Pediatric Dentistry", id: "pediatric" },
-            { label: "Oral Surgery", id: "oral" },
-            { label: "Restorative Dentistry", id: "restorative" },
-            { label: "Sedation Dentistry", id: "sedation" },
-            { label: "Periodontics", id: "periodontics" },
-          ].map((s) => (
-            <Link key={s.id} href={`/services/${s.id}`} className="p-4 border border-gray-200 rounded-xl text-center hover:border-[#1B89C5] hover:bg-blue-50/30 transition-all">
-              <span className="font-semibold text-[#101828] text-sm block mb-1">{s.label}</span>
-              <span className="text-xs text-gray-500">Rocklin, CA</span>
-            </Link>
-          ))}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="mb-12">
+            {FAQS.map((faq) => (
+              <FAQItem key={faq.q} q={faq.q} a={faq.a} />
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="bg-[#E8F4FA] rounded-2xl p-10 text-center mb-14">
+            <h2 className="text-2xl font-bold text-[#101828] mb-4">Still Have Questions? Contact Our Rocklin Dental Office</h2>
+            <p className="text-gray-600 mb-6">
+              Our friendly team at Heritage Oak Dental is here to help. Whether you need to schedule an appointment or have questions about your dental care, don't hesitate to reach out.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="tel:9166264050" className="inline-block bg-[#1B89C5] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#1578ad] transition-colors">
+                Call (916) 626-4050
+              </a>
+              <Link href="/contact" className="inline-block border-2 border-[#1B89C5] text-[#1B89C5] font-semibold px-8 py-3 rounded-full hover:bg-[#E8F4FA] transition-colors">
+                Request an Appointment
+              </Link>
+            </div>
+            <p className="text-gray-500 text-sm mt-6">
+              <strong>Heritage Oak Dental</strong> • 3700 Atherton Rd, Rocklin, CA 95765 • (916) 626-4050
+            </p>
+          </div>
+
+          {/* Services Grid */}
+          <h2 className="text-2xl font-bold text-[#101828] mb-6">Explore Our Dental Services in Rocklin, CA</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "General Dentistry", id: "general" },
+              { label: "Cosmetic Dentistry", id: "cosmetic" },
+              { label: "Dental Implants", id: "implant" },
+              { label: "Orthodontics", id: "orthodontics" },
+              { label: "Pediatric Dentistry", id: "pediatric" },
+              { label: "Oral Surgery", id: "oral" },
+              { label: "Restorative Dentistry", id: "restorative" },
+              { label: "Sedation Dentistry", id: "sedation" },
+              { label: "Periodontics", id: "periodontics" },
+            ].map((s) => (
+              <Link key={s.id} href={`/services/${s.id}`} className="p-4 border border-gray-200 rounded-xl text-center hover:border-[#1B89C5] hover:bg-blue-50/30 transition-all">
+                <span className="font-semibold text-[#101828] text-sm block mb-1">{s.label}</span>
+                <span className="text-xs text-gray-500">Rocklin, CA</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

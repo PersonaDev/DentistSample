@@ -1,3 +1,5 @@
+import { SEOHead } from "@/components/SEOHead";
+
 const FORMS = [
   {
     title: "Adult Health History",
@@ -28,6 +30,13 @@ const FORMS = [
 
 export function NewPatient() {
   return (
+    <>
+      <SEOHead
+        title="New Patient Forms | Heritage Oak Dental Rocklin, CA"
+        description="Download new patient forms for Heritage Oak Dental in Rocklin, CA. Complete your paperwork before your first visit and save time. Serving Rocklin, Roseville, Granite Bay & Sacramento."
+        keywords="new patient dental forms Rocklin, Heritage Oak Dental new patient, dental paperwork Rocklin CA"
+        canonicalPath="/resources/newpatient"
+      />
     <div>
       <div className="bg-[#E8F4FA] py-16 text-center px-4">
         <h1 className="text-5xl font-bold text-[#101828] mb-4">New Patient Forms</h1>
@@ -78,5 +87,6 @@ export function NewPatient() {
         </div>
       </div>
     </div>
+    </>
   );
 }

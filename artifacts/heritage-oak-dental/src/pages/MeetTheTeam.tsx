@@ -1,3 +1,5 @@
+import { SEOHead } from "@/components/SEOHead";
+
 const IMG = (hash: string) => `${import.meta.env.BASE_URL}images/${hash}`;
 
 const DOCTORS = [
@@ -47,9 +49,15 @@ const STAFF = [
 export function MeetTheTeam() {
   return (
     <div>
+      <SEOHead
+        title="Meet Our Dental Team | Heritage Oak Dental Rocklin, CA"
+        description="Meet the caring dental team at Heritage Oak Dental in Rocklin, CA. Our experienced doctors, hygienists, and staff are dedicated to providing exceptional dental care to families in Rocklin, Roseville & Granite Bay."
+        keywords="Heritage Oak Dental team, dental team Rocklin CA, dentist staff Rocklin, dental hygienist Rocklin"
+        canonicalPath="/about/meettheteam"
+      />
       {/* Page Hero */}
       <div className="bg-[#E8F4FA] py-16 text-center">
-        <h1 className="text-5xl font-bold text-[#101828]">Meet Your Rocklin, CA Dentists</h1>
+        <h1 className="text-5xl font-bold text-[#101828]">Meet Your Rocklin, CA Dental Team</h1>
       </div>
 
       {/* Doctors Section */}
