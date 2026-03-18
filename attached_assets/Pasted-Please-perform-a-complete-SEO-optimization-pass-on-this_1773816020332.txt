@@ -1,0 +1,44 @@
+Please perform a complete SEO optimization pass on this dental website targeting the Rocklin, Sacramento, Loomis, Roseville, Granite Bay, and Folsom, CA area. Do the following:
+1. Meta tags & head
+
+Add a unique, keyword-rich <title> tag for every page (60 chars max) that includes the practice name, service, and location (e.g. 'Teeth Whitening in Rocklin, CA | Heritage Oak Dental')
+Add a unique <meta name='description'> for every page (155 chars max) that is compelling and includes location + primary service
+Add <meta name='keywords'> with locally relevant terms
+Add canonical tags to prevent duplicate content issues
+Add Open Graph tags (og:title, og:description, og:image, og:url) for social sharing
+
+2. Schema markup (structured data)
+
+Add a LocalBusiness + Dentist JSON-LD schema block to the homepage including: practice name, address (Rocklin, CA), phone number, hours of operation, geo coordinates, and sameAs links for any social profiles
+Add Service schema for each major service page
+Add FAQPage schema if any FAQ sections exist
+Add BreadcrumbList schema for all interior pages
+
+3. On-page content
+
+Ensure every page has exactly one <h1> that includes a primary keyword and location
+Add location-rich subheadings (<h2>, <h3>) throughout — reference Rocklin, Roseville, Loomis, Granite Bay, Folsom, and greater Sacramento naturally in body copy
+Add alt text to every image that is descriptive and includes relevant keywords where natural
+Make sure internal links between pages use descriptive anchor text (not 'click here')
+
+4. Technical SEO
+
+Generate a sitemap.xml and place it at the repo root so Vercel serves it at /sitemap.xml
+Generate a robots.txt that allows all crawlers and references the sitemap URL
+Ensure all page URLs are lowercase, hyphenated, and descriptive
+Add <link rel='preload'> for any hero images to improve LCP score
+Make sure there are no broken internal links
+
+5. Local SEO signals
+
+Weave in natural references to nearby landmarks, neighborhoods, and communities: Rocklin, Roseville, Loomis, Granite Bay, Lincoln, Folsom, Elk Grove, and Sacramento
+Add a service area section to the homepage that lists all cities served
+If there is a contact page, ensure the NAP (Name, Address, Phone) is consistent and marked up with schema
+
+6. Performance (Core Web Vitals)
+
+Add loading='lazy' to all below-the-fold images
+Make sure the hero/above-the-fold image has loading='eager' and is properly sized
+Add width and height attributes to all <img> tags to prevent layout shift (CLS)
+
+When done, give me a summary of every change made, which files were modified, and flag anything you couldn't complete that I should handle manually (like Google Business Profile, backlinks, or submitting the sitemap to Google Search Console).
