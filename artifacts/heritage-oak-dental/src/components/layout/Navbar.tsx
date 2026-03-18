@@ -165,57 +165,78 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav Overlay */}
       <div
         className={cn(
-          "fixed inset-0 bg-white z-40 transition-all duration-300 lg:hidden flex flex-col pt-24 pb-8 px-6 overflow-y-auto",
+          "fixed inset-0 z-50 bg-white flex flex-col lg:hidden transition-all duration-300",
           isOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
         )}
       >
-        <div className="flex flex-col gap-0 text-base">
-          <Link href="/" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">Home</Link>
-
-          <div className="border-b border-gray-100">
-            <p className="py-3 font-semibold text-[#101828]">About</p>
-            <div className="flex flex-col gap-2 pl-4 pb-3">
-              {ABOUT_LINKS.map((l) => (
-                <Link key={l.href} href={l.href} className="text-gray-600 py-1">{l.label}</Link>
-              ))}
-            </div>
-          </div>
-
-          <div className="border-b border-gray-100">
-            <p className="py-3 font-semibold text-[#101828]">Resources</p>
-            <div className="flex flex-col gap-2 pl-4 pb-3">
-              {RESOURCE_LINKS.map((l) => (
-                <Link key={l.href} href={l.href} className="text-gray-600 py-1">{l.label}</Link>
-              ))}
-            </div>
-          </div>
-
-          <Link href="/specials/savingsplan" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">Specials</Link>
-
-          <div className="border-b border-gray-100">
-            <p className="py-3 font-semibold text-[#101828]">Services</p>
-            <div className="flex flex-col gap-2 pl-4 pb-3">
-              {SERVICES.map((s) => (
-                <Link key={s.id} href={`/services/${s.id}`} className="text-gray-600 py-1">{s.title}</Link>
-              ))}
-            </div>
-          </div>
-
-          <Link href="/contact" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">Contact</Link>
-          <Link href="/faq" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">FAQ</Link>
+        {/* Sticky top bar inside overlay — always solid white, never scrolls */}
+        <div className="flex-shrink-0 flex items-center justify-between px-4 py-3 bg-white border-b border-gray-100 shadow-sm">
+          <Link href="/" className="flex items-center gap-3">
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              alt="Heritage Oak Dental"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
+          <button
+            className="p-2 text-[#101828]"
+            onClick={() => setIsOpen(false)}
+            aria-label="Close menu"
+          >
+            <X className="w-6 h-6" />
+          </button>
         </div>
 
-        <div className="mt-auto pt-8">
-          <a
-            href="tel:9166264050"
-            className="flex items-center justify-center gap-2 w-full py-4 bg-[#1B89C5] text-white font-semibold rounded-full hover:bg-[#1578ad] transition-colors"
-          >
-            <Phone className="w-5 h-5" />
-            Call (916) 626-4050
-          </a>
+        {/* Scrollable menu content */}
+        <div className="flex-1 overflow-y-auto px-6 py-4">
+          <div className="flex flex-col gap-0 text-base">
+            <Link href="/" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">Home</Link>
+
+            <div className="border-b border-gray-100">
+              <p className="py-3 font-semibold text-[#101828]">About</p>
+              <div className="flex flex-col gap-2 pl-4 pb-3">
+                {ABOUT_LINKS.map((l) => (
+                  <Link key={l.href} href={l.href} className="text-gray-600 py-1">{l.label}</Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="border-b border-gray-100">
+              <p className="py-3 font-semibold text-[#101828]">Resources</p>
+              <div className="flex flex-col gap-2 pl-4 pb-3">
+                {RESOURCE_LINKS.map((l) => (
+                  <Link key={l.href} href={l.href} className="text-gray-600 py-1">{l.label}</Link>
+                ))}
+              </div>
+            </div>
+
+            <Link href="/specials/savingsplan" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">Specials</Link>
+
+            <div className="border-b border-gray-100">
+              <p className="py-3 font-semibold text-[#101828]">Services</p>
+              <div className="flex flex-col gap-2 pl-4 pb-3">
+                {SERVICES.map((s) => (
+                  <Link key={s.id} href={`/services/${s.id}`} className="text-gray-600 py-1">{s.title}</Link>
+                ))}
+              </div>
+            </div>
+
+            <Link href="/contact" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">Contact</Link>
+            <Link href="/faq" className="py-3 border-b border-gray-100 font-semibold text-[#101828]">FAQ</Link>
+          </div>
+
+          <div className="pt-8 pb-4">
+            <a
+              href="tel:9166264050"
+              className="flex items-center justify-center gap-2 w-full py-4 bg-[#1B89C5] text-white font-semibold rounded-full hover:bg-[#1578ad] transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              Call (916) 626-4050
+            </a>
+          </div>
         </div>
       </div>
     </header>
