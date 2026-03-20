@@ -36,69 +36,75 @@ export function Home() {
   return (
     <div className="w-full overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative bg-white overflow-hidden" style={{ minHeight: "88vh" }}>
-        <div className="grid lg:grid-cols-2 h-full" style={{ minHeight: "88vh" }}>
+      <section className="relative overflow-hidden" style={{ minHeight: "88vh" }}>
 
-          {/* Left: Content */}
-          <div className="flex flex-col justify-center py-24 lg:py-0 bg-white pl-[130px] pr-[130px]">
-            <div className="w-full lg:ml-auto lg:max-w-[500px] xl:max-w-[540px]">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-7 w-fit">
+        {/* Full-bleed background image */}
+        <img
+          src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
+          alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
+        />
+
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+
+        {/* Content: glass card on the left */}
+        <div className="relative flex items-center h-full px-8 sm:px-12 lg:px-20 xl:px-28" style={{ minHeight: "88vh" }}>
+          <div
+            className="w-full max-w-[500px] xl:max-w-[540px] rounded-3xl p-8 xl:p-12"
+            style={{
+              background: "rgba(255, 255, 255, 0.78)",
+              backdropFilter: "blur(22px)",
+              WebkitBackdropFilter: "blur(22px)",
+              border: "1px solid rgba(255, 255, 255, 0.85)",
+              boxShadow: "0 8px 48px rgba(0, 0, 0, 0.14)",
+            }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 w-fit">
               <Star className="w-4 h-4 fill-primary" />
               4.9★ Rated · Top Dentist in Rocklin, CA
             </div>
 
-            <h1 className="font-bold text-foreground leading-[1.1] mb-6">
-              <span className="block text-[40px] sm:text-[52px] lg:text-[56px] xl:text-[62px]">Welcome to</span>
-              <span className="block text-[40px] sm:text-[52px] lg:text-[56px] xl:text-[62px] text-primary">Heritage Oak Dental</span>
-              <span className="block text-lg sm:text-xl font-normal text-muted-foreground mt-3">Your trusted family dentist in Rocklin, CA</span>
+            <h1 className="font-bold text-foreground leading-[1.1] mb-5">
+              <span className="block text-[36px] sm:text-[44px] lg:text-[48px] xl:text-[54px]">Welcome to</span>
+              <span className="block text-[36px] sm:text-[44px] lg:text-[48px] xl:text-[54px] text-primary">Heritage Oak Dental</span>
+              <span className="block text-base sm:text-lg font-normal text-muted-foreground mt-2">Your trusted family dentist in Rocklin, CA</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-base text-muted-foreground mb-7 leading-relaxed">
               Comprehensive, compassionate dental care for families across Rocklin, Roseville, Granite Bay, and the greater Sacramento area. We make every visit comfortable and worth smiling about.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className="flex flex-wrap gap-3 mb-8">
               <a href="tel:9166264050">
-                <Button size="lg" className="gap-2 shadow-lg shadow-primary/20 px-6">
+                <Button size="lg" className="gap-2 shadow-lg shadow-primary/25 px-6">
                   <Phone className="w-5 h-5" />
                   Call (916) 626-4050
                 </Button>
               </a>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="px-6">
+                <Button size="lg" variant="outline" className="px-6 bg-white/60 hover:bg-white/90 border-white/80">
                   Book an Appointment
                 </Button>
               </Link>
             </div>
 
             {/* Trust stats */}
-            <div className="flex gap-8 pt-8 border-t border-gray-100">
+            <div className="flex gap-8 pt-6 border-t border-gray-200/70">
               {[
                 ["4.9 ★", "Patient Rating"],
                 ["165+", "Google Reviews"],
                 ["15+", "Years in Rocklin"],
               ].map(([num, label]) => (
                 <div key={label}>
-                  <p className="text-2xl font-bold text-foreground leading-none mb-1">{num}</p>
-                  <p className="text-sm text-muted-foreground">{label}</p>
+                  <p className="text-xl font-bold text-foreground leading-none mb-1">{num}</p>
+                  <p className="text-xs text-muted-foreground">{label}</p>
                 </div>
               ))}
             </div>
-            </div>
           </div>
-
-          {/* Right: Full-height photo */}
-          <div className="hidden lg:block relative">
-            <img
-              src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
-              alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
-              className="absolute inset-0 w-full h-full object-cover"
-              loading="eager"
-              fetchPriority="high"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent pointer-events-none" />
-          </div>
-
         </div>
       </section>
       {/* SERVICES GRID */}
