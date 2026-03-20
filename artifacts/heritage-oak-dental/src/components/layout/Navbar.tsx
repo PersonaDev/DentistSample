@@ -94,7 +94,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 w-full z-50 py-3 transition-all duration-300",
           location === "/"
-            ? "bg-transparent border-b border-transparent"
+            ? "bg-white/70 backdrop-blur-md border-b border-white/40"
             : "bg-white shadow-sm border-b border-gray-100"
         )}
       >
