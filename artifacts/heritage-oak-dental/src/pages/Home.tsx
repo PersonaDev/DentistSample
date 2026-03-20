@@ -40,7 +40,7 @@ export function Home() {
         <div className="grid lg:grid-cols-2 h-full" style={{ minHeight: "88vh" }}>
 
           {/* Left: Content */}
-          <div className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-0 bg-white">
+          <div className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-0 bg-white pl-[175px] pr-[175px]">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-7 w-fit">
               <Star className="w-4 h-4 fill-primary" />
               4.9★ Rated · Top Dentist in Rocklin, CA
