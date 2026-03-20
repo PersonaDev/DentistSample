@@ -34,10 +34,12 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
 
 export function Home() {
   return (
-    <div className="w-full overflow-hidden">
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden" style={{ minHeight: "88vh" }}>
-
+    <div className="w-full -mt-[75px] lg:-mt-[104px]">
+      {/* HERO SECTION — full viewport, extends behind fixed navbar */}
+      <section
+        className="relative overflow-hidden"
+        style={{ minHeight: "100vh" }}
+      >
         {/* Full-bleed background image */}
         <img
           src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
@@ -47,60 +49,64 @@ export function Home() {
           fetchPriority="high"
         />
 
-        {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+        {/* Soft dark vignette for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/5 to-transparent pointer-events-none" />
 
-        {/* Content: glass card on the left */}
-        <div className="relative flex items-center h-full px-8 sm:px-12 lg:px-20 xl:px-28" style={{ minHeight: "88vh" }}>
+        {/* Content: premium glass card, vertically centred, offset for navbar */}
+        <div
+          className="relative flex items-center h-full px-6 sm:px-10 lg:px-16 xl:px-24"
+          style={{ minHeight: "100vh", paddingTop: "104px", paddingBottom: "48px" }}
+        >
           <div
-            className="w-full max-w-[500px] xl:max-w-[540px] rounded-3xl p-8 xl:p-12"
+            className="w-full max-w-[580px] xl:max-w-[640px] rounded-[28px] p-10 xl:p-14"
             style={{
-              background: "rgba(255, 255, 255, 0.78)",
-              backdropFilter: "blur(22px)",
-              WebkitBackdropFilter: "blur(22px)",
-              border: "1px solid rgba(255, 255, 255, 0.85)",
-              boxShadow: "0 8px 48px rgba(0, 0, 0, 0.14)",
+              background: "rgba(255, 255, 255, 0.82)",
+              backdropFilter: "blur(28px)",
+              WebkitBackdropFilter: "blur(28px)",
+              border: "1px solid rgba(255, 255, 255, 0.9)",
+              boxShadow: "0 12px 60px rgba(0, 0, 0, 0.18), 0 2px 12px rgba(0,0,0,0.08)",
             }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 w-fit">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/12 text-primary text-sm font-semibold mb-7 w-fit ring-1 ring-primary/20">
               <Star className="w-4 h-4 fill-primary" />
               4.9★ Rated · Top Dentist in Rocklin, CA
             </div>
 
-            <h1 className="font-bold text-foreground leading-[1.1] mb-5">
-              <span className="block text-[36px] sm:text-[44px] lg:text-[48px] xl:text-[54px]">Welcome to</span>
-              <span className="block text-[36px] sm:text-[44px] lg:text-[48px] xl:text-[54px] text-primary">Heritage Oak Dental</span>
-              <span className="block text-base sm:text-lg font-normal text-muted-foreground mt-2">Your trusted family dentist in Rocklin, CA</span>
+            <h1 className="font-bold text-foreground leading-[1.08] mb-5">
+              <span className="block text-[38px] sm:text-[48px] lg:text-[52px] xl:text-[58px] tracking-tight">Welcome to</span>
+              <span className="block text-[38px] sm:text-[48px] lg:text-[52px] xl:text-[58px] tracking-tight text-primary">Heritage Oak Dental</span>
+              <span className="block text-lg sm:text-xl font-normal text-slate-500 mt-3 leading-snug">Your trusted family dentist in Rocklin, CA</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-muted-foreground mb-7 leading-relaxed">
+            <p className="text-base text-slate-600 mb-8 leading-relaxed max-w-md">
               Comprehensive, compassionate dental care for families across Rocklin, Roseville, Granite Bay, and the greater Sacramento area. We make every visit comfortable and worth smiling about.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3 mb-9">
               <a href="tel:9166264050">
-                <Button size="lg" className="gap-2 shadow-lg shadow-primary/25 px-6">
+                <Button size="lg" className="gap-2 shadow-lg shadow-primary/30 px-7 h-12 text-base">
                   <Phone className="w-5 h-5" />
                   Call (916) 626-4050
                 </Button>
               </a>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="px-6 bg-white/60 hover:bg-white/90 border-white/80">
+                <Button size="lg" variant="outline" className="px-7 h-12 text-base bg-white/70 hover:bg-white border-white/90 shadow-sm">
                   Book an Appointment
                 </Button>
               </Link>
             </div>
 
             {/* Trust stats */}
-            <div className="flex gap-8 pt-6 border-t border-gray-200/70">
+            <div className="flex gap-10 pt-7 border-t border-slate-200/80">
               {[
                 ["4.9 ★", "Patient Rating"],
                 ["165+", "Google Reviews"],
                 ["15+", "Years in Rocklin"],
               ].map(([num, label]) => (
                 <div key={label}>
-                  <p className="text-xl font-bold text-foreground leading-none mb-1">{num}</p>
-                  <p className="text-xs text-muted-foreground">{label}</p>
+                  <p className="text-2xl font-bold text-foreground leading-none mb-1">{num}</p>
+                  <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">{label}</p>
                 </div>
               ))}
             </div>
