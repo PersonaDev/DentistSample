@@ -35,27 +35,25 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
 export function Home() {
   return (
     <div className="w-full -mt-[75px] lg:-mt-[104px]">
-      {/* HERO SECTION — full viewport, extends behind fixed navbar */}
-      <section
-        className="relative overflow-hidden"
-        style={{ minHeight: "100vh" }}
-      >
-        {/* Full-bleed background image */}
+      {/* HERO SECTION — image true to size, glass card floats on top */}
+      <section className="relative overflow-visible">
+
+        {/* Background image — natural proportions, full width */}
         <img
           src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
           alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="w-full block"
           loading="eager"
           fetchPriority="high"
         />
 
-        {/* Soft dark vignette for depth */}
+        {/* Soft vignette */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/5 to-transparent pointer-events-none" />
 
-        {/* Content: premium glass card, vertically centred, offset for navbar */}
+        {/* Glass card — floats on top of the image */}
         <div
-          className="relative flex items-center h-full px-6 sm:px-10 lg:px-16 xl:px-24"
-          style={{ minHeight: "100vh", paddingTop: "104px", paddingBottom: "48px" }}
+          className="absolute inset-0 flex items-center px-6 sm:px-10 lg:px-16 xl:px-24"
+          style={{ paddingTop: "104px", paddingBottom: "48px" }}
         >
           <div
             className="w-full max-w-[580px] xl:max-w-[640px] rounded-[28px] p-10 xl:p-14"
