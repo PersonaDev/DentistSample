@@ -35,25 +35,32 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
 export function Home() {
   return (
     <div className="w-full -mt-[75px] lg:-mt-[104px]">
-      {/* HERO SECTION — image true to size, glass card floats on top */}
-      <section className="relative overflow-visible">
+      {/* HERO SECTION — image contained with breathing room */}
+      <section
+        className="relative"
+        style={{ background: "#68bdd8", paddingTop: "104px", paddingBottom: "40px" }}
+      >
+        {/* Image — true to size, padded on all sides */}
+        <div className="px-10 sm:px-14 lg:px-20">
+          <img
+            src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
+            alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
+            className="w-full block rounded-2xl"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
 
-        {/* Background image — natural proportions, full width */}
-        <img
-          src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
-          alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
-          className="w-full block"
-          loading="eager"
-          fetchPriority="high"
+        {/* Soft vignette over image */}
+        <div
+          className="absolute rounded-2xl pointer-events-none"
+          style={{ inset: "104px 40px 40px 40px", background: "linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.04) 50%, transparent 100%)" }}
         />
 
-        {/* Soft vignette */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/5 to-transparent pointer-events-none" />
-
-        {/* Glass card — floats on top of the image */}
+        {/* Glass card — floats over the left of the image */}
         <div
-          className="absolute inset-0 flex items-center px-6 sm:px-10 lg:px-16 xl:px-24"
-          style={{ paddingTop: "104px", paddingBottom: "48px" }}
+          className="absolute flex items-center px-16 sm:px-20 lg:px-28"
+          style={{ inset: "104px 0 40px 0" }}
         >
           <div
             className="w-full max-w-[580px] xl:max-w-[640px] rounded-[28px] p-10 xl:p-14"
