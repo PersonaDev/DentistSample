@@ -34,76 +34,45 @@ const SERVICE_ICONS: Record<string, React.ReactNode> = {
 
 export function Home() {
   return (
-    <div className="w-full -mt-[75px] lg:-mt-[104px]">
-      {/* HERO SECTION — image contained with breathing room */}
-      <section
-        className="relative"
-        style={{ background: "#68bdd8", paddingTop: "104px", paddingBottom: "40px" }}
-      >
-        {/* Image — true to size, padded on all sides */}
-        <div className="px-10 sm:px-14 lg:px-20">
-          <img
-            src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
-            alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
-            className="w-full block rounded-2xl"
-            loading="eager"
-            fetchPriority="high"
-          />
-        </div>
+    <div className="w-full overflow-hidden">
+      {/* HERO SECTION */}
+      <section className="relative bg-white overflow-hidden" style={{ minHeight: "88vh" }}>
+        <div className="grid lg:grid-cols-2 h-full" style={{ minHeight: "88vh" }}>
 
-        {/* Soft vignette over image */}
-        <div
-          className="absolute rounded-2xl pointer-events-none"
-          style={{ inset: "104px 40px 40px 40px", background: "linear-gradient(to right, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.04) 50%, transparent 100%)" }}
-        />
-
-        {/* Glass card — floats over the left of the image */}
-        <div
-          className="absolute flex items-center px-16 sm:px-20 lg:px-28"
-          style={{ inset: "104px 0 40px 0" }}
-        >
-          <div
-            className="w-full max-w-[580px] xl:max-w-[640px] rounded-[28px] p-10 xl:p-14"
-            style={{
-              background: "rgba(255, 255, 255, 0.82)",
-              backdropFilter: "blur(28px)",
-              WebkitBackdropFilter: "blur(28px)",
-              border: "1px solid rgba(255, 255, 255, 0.9)",
-              boxShadow: "0 12px 60px rgba(0, 0, 0, 0.18), 0 2px 12px rgba(0,0,0,0.08)",
-            }}
-          >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/12 text-primary text-sm font-semibold mb-7 w-fit ring-1 ring-primary/20">
+          {/* Left: Content */}
+          <div className="flex flex-col justify-center py-24 lg:py-0 bg-white pl-[130px] pr-[130px]">
+            <div className="w-full lg:ml-auto lg:max-w-[500px] xl:max-w-[540px]">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-7 w-fit">
               <Star className="w-4 h-4 fill-primary" />
               4.9★ Rated · Top Dentist in Rocklin, CA
             </div>
 
-            <h1 className="font-bold text-foreground leading-[1.08] mb-5">
-              <span className="block text-[38px] sm:text-[48px] lg:text-[52px] xl:text-[58px] tracking-tight">Welcome to</span>
-              <span className="block text-[38px] sm:text-[48px] lg:text-[52px] xl:text-[58px] tracking-tight text-primary">Heritage Oak Dental</span>
-              <span className="block text-lg sm:text-xl font-normal text-slate-500 mt-3 leading-snug">Your trusted family dentist in Rocklin, CA</span>
+            <h1 className="font-bold text-foreground leading-[1.1] mb-6">
+              <span className="block text-[40px] sm:text-[52px] lg:text-[56px] xl:text-[62px]">Welcome to</span>
+              <span className="block text-[40px] sm:text-[52px] lg:text-[56px] xl:text-[62px] text-primary">Heritage Oak Dental</span>
+              <span className="block text-lg sm:text-xl font-normal text-muted-foreground mt-3">Your trusted family dentist in Rocklin, CA</span>
             </h1>
 
-            <p className="text-base text-slate-600 mb-8 leading-relaxed max-w-md">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
               Comprehensive, compassionate dental care for families across Rocklin, Roseville, Granite Bay, and the greater Sacramento area. We make every visit comfortable and worth smiling about.
             </p>
 
-            <div className="flex flex-wrap gap-3 mb-9">
+            <div className="flex flex-wrap gap-3 mb-10">
               <a href="tel:9166264050">
-                <Button size="lg" className="gap-2 shadow-lg shadow-primary/30 px-7 h-12 text-base">
+                <Button size="lg" className="gap-2 shadow-lg shadow-primary/20 px-6">
                   <Phone className="w-5 h-5" />
                   Call (916) 626-4050
                 </Button>
               </a>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="px-7 h-12 text-base bg-white/70 hover:bg-white border-white/90 shadow-sm">
+                <Button size="lg" variant="outline" className="px-6">
                   Book an Appointment
                 </Button>
               </Link>
             </div>
 
             {/* Trust stats */}
-            <div className="flex gap-10 pt-7 border-t border-slate-200/80">
+            <div className="flex gap-8 pt-8 border-t border-gray-100">
               {[
                 ["4.9 ★", "Patient Rating"],
                 ["165+", "Google Reviews"],
@@ -111,11 +80,25 @@ export function Home() {
               ].map(([num, label]) => (
                 <div key={label}>
                   <p className="text-2xl font-bold text-foreground leading-none mb-1">{num}</p>
-                  <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">{label}</p>
+                  <p className="text-sm text-muted-foreground">{label}</p>
                 </div>
               ))}
             </div>
+            </div>
           </div>
+
+          {/* Right: Full-height photo */}
+          <div className="hidden lg:block relative">
+            <img
+              src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
+              alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent pointer-events-none" />
+          </div>
+
         </div>
       </section>
       {/* SERVICES GRID */}
