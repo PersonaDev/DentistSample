@@ -90,8 +90,8 @@ export function Home() {
           {/* Right: Full-height photo */}
           <div className="hidden lg:block relative">
             <img
-              src={`${import.meta.env.BASE_URL}images/9b17b9cbf8d3f97c920e9b9f9cf4ef0116050ffe.png`}
-              alt="Heritage Oak Dental welcoming waiting room in Rocklin, CA"
+              src={`${import.meta.env.BASE_URL}images/hero-smile.png`}
+              alt="Happy patient with a beautiful smile at Heritage Oak Dental in Rocklin, CA"
               className="absolute inset-0 w-full h-full object-cover"
               loading="eager"
               fetchPriority="high"
