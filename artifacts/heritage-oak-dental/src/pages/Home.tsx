@@ -36,61 +36,67 @@ export function Home() {
   return (
     <div className="w-full overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative bg-muted py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-l-[100px] transform translate-x-1/3 -translate-y-1/4" />
-        </div>
+      <section className="relative bg-white overflow-hidden" style={{ minHeight: "88vh" }}>
+        <div className="grid lg:grid-cols-2 h-full" style={{ minHeight: "88vh" }}>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-primary text-sm font-semibold mb-6 shadow-sm border border-primary/10">
-                <Star className="w-4 h-4 fill-primary" /> Top Rated Dentist in
-                Rocklin
-              </div>
-              <h1 className="font-bold mb-6 text-foreground leading-tight">
-                <span className="block text-xl sm:text-2xl font-semibold text-muted-foreground mb-1">Your Trusted Dentist in Rocklin, CA</span>
-                <span className="block text-[36px] sm:text-5xl lg:text-[52px] text-foreground">Welcome to</span>
-                <span className="block text-[36px] sm:text-5xl lg:text-[52px] text-primary">Heritage Oak Dental</span>
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">We are privileged and proud to provide comprehensive dental care and to serve our local community in Rocklin, Roseville, Lincoln, Loomis, and Granite Bay. We strive to develop long-lasting, trusting relationships with our neighbors in the Sacramento, Placer, and El Dorado counties. We recognize that every patient has different needs, and we pride ourselves in the courteous service we deliver to each person who walks through our doors. Whether it's time for a new, beautiful and healthy smile or time to care for the one you have, Heritage Oak Dental is ready to make you our top priority.</p>
-
-              <div className="flex flex-wrap gap-4">
-                <a href="tel:9166264050">
-                  <Button size="lg" className="gap-2">
-                    <Phone className="w-5 h-5" />
-                    Call (916) 626-4050
-                  </Button>
-                </a>
-                <Link href="/services">
-                  <Button size="lg" variant="outline">
-                    Our Services
-                  </Button>
-                </Link>
-              </div>
+          {/* Left: Content */}
+          <div className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-0 bg-white">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-7 w-fit">
+              <Star className="w-4 h-4 fill-primary" />
+              4.9★ Rated · Top Dentist in Rocklin, CA
             </div>
 
-            <div className="relative lg:ml-auto w-full max-w-lg">
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-[2rem] transform translate-x-4 translate-y-4" />
-              <img
-                src={`${import.meta.env.BASE_URL}images/db6e50499d0e50178856effaf7fc05fb9fdf2230.png`}
-                alt="Modern dental office waiting room"
-                className="relative rounded-[2rem] shadow-2xl w-full h-auto object-cover aspect-[4/3] z-10 border-8 border-white"
-              />
+            <h1 className="font-bold text-foreground leading-[1.1] mb-6">
+              <span className="block text-[40px] sm:text-[52px] lg:text-[56px] xl:text-[62px]">Welcome to</span>
+              <span className="block text-[40px] sm:text-[52px] lg:text-[56px] xl:text-[62px] text-primary">Heritage Oak Dental</span>
+              <span className="block text-lg sm:text-xl font-normal text-muted-foreground mt-3">Your trusted family dentist in Rocklin, CA</span>
+            </h1>
 
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-4 border border-border/50">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Star className="w-6 h-6 text-primary fill-primary" />
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
+              Comprehensive, compassionate dental care for families across Rocklin, Roseville, Granite Bay, and the greater Sacramento area. We make every visit comfortable and worth smiling about.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mb-10">
+              <a href="tel:9166264050">
+                <Button size="lg" className="gap-2 shadow-lg shadow-primary/20 px-6">
+                  <Phone className="w-5 h-5" />
+                  Call (916) 626-4050
+                </Button>
+              </a>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" className="px-6">
+                  Book an Appointment
+                </Button>
+              </Link>
+            </div>
+
+            {/* Trust stats */}
+            <div className="flex gap-8 pt-8 border-t border-gray-100">
+              {[
+                ["4.9 ★", "Patient Rating"],
+                ["165+", "Google Reviews"],
+                ["15+", "Years in Rocklin"],
+              ].map(([num, label]) => (
+                <div key={label}>
+                  <p className="text-2xl font-bold text-foreground leading-none mb-1">{num}</p>
+                  <p className="text-sm text-muted-foreground">{label}</p>
                 </div>
-                <div>
-                  <p className="font-bold text-lg leading-none">4.9/5</p>
-                  <p className="text-sm text-muted-foreground">
-                    Patient Reviews
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
+
+          {/* Right: Full-height photo */}
+          <div className="hidden lg:block relative">
+            <img
+              src={`${import.meta.env.BASE_URL}images/9b17b9cbf8d3f97c920e9b9f9cf4ef0116050ffe.png`}
+              alt="Heritage Oak Dental welcoming waiting room in Rocklin, CA"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-transparent pointer-events-none" />
+          </div>
+
         </div>
       </section>
       {/* SERVICES GRID */}
