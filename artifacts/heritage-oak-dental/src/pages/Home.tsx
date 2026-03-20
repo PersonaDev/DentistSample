@@ -40,7 +40,8 @@ export function Home() {
         <div className="grid lg:grid-cols-2 h-full" style={{ minHeight: "88vh" }}>
 
           {/* Left: Content */}
-          <div className="flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-20 py-24 lg:py-0 bg-white pl-[175px] pr-[175px]">
+          <div className="flex flex-col justify-center px-8 sm:px-12 lg:pl-16 lg:pr-6 xl:pl-20 xl:pr-8 py-24 lg:py-0 bg-white">
+            <div className="w-full lg:ml-auto lg:max-w-[500px] xl:max-w-[540px]">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-7 w-fit">
               <Star className="w-4 h-4 fill-primary" />
               4.9★ Rated · Top Dentist in Rocklin, CA
@@ -82,6 +83,7 @@ export function Home() {
                   <p className="text-sm text-muted-foreground">{label}</p>
                 </div>
               ))}
+            </div>
             </div>
           </div>
 
